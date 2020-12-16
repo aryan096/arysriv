@@ -1,0 +1,179 @@
+@import './fonts.css';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FCF6ED;
+  font-family: 'Mukta', sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+.website-container { 
+  max-width: 60%;
+  margin: auto;
+}
+
+/* Common classes begin */
+
+.section-header { 
+  font-weight: 500;
+  font-weight: bold;
+}
+
+hr { 
+  border: 2px dashed #000000;
+  border-style: none none dashed; 
+}
+
+.nav-divider { 
+  margin-top: -20px;
+}
+
+
+/* Common classes end */
+
+/* Navbar stuff begins */
+
+.name-logo {
+  color: #A14112;
+  text-decoration: none;
+  font-family: 'Langar', cursive;
+  font-size: 1.4em;
+}
+
+.navbar-container { 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navmenu-container { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navmenu { 
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.navitem { 
+  display:inline; 
+  margin: 1em;
+  font-size: 18px;
+}
+
+.navitem a:link { 
+  color: #A14112;
+  text-decoration: none;
+}
+.navitem a:visited { 
+  color: #A14112;
+  text-decoration: none;
+}
+.navitem a:hover { 
+  color: #B6465F;
+  text-decoration: underline;
+}
+.navitem a:active { 
+  color: #A14112;
+  text-decoration: underline;
+}
+
+/* Navbar stuff ends */
+
+/* About stuff beings */
+
+.intro-text { 
+  font-size: 2.4em;
+  margin-top: 0.8em;
+  margin-bottom: 0;
+}
+
+.tldr { 
+  font-weight: bold;
+}
+
+.tldr-text { 
+  font-size: 1.5em;
+}
+
+.portrait-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.portrait-img { 
+  margin: 2em;
+}
+
+.about-links { 
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.about-links li { 
+  margin: 0.6em;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.about-links a:link { 
+  color: #A14112;
+  font-weight: bold;
+  text-decoration: none;
+}
+.about-links a:visited { 
+  color: #A14112;
+  font-weight: bold;
+  text-decoration: none;
+}
+.about-links a:hover { 
+  color: #B6465F;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.about-links a:active { 
+  color: #A14112;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.links-container { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+/* About stuff ends */
+
+.footer-container { 
+  margin-top: 8em;
+  margin-bottom: 1.5em;
+}
+
+.copyright { 
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  height: 1em;
+}
+
+.copyright p { 
+  margin-top: -3px;
+  margin-left: 6px;
+  margin-right: 2em;
+  color: gray;
+}
+
+.footer-icon { 
+  margin-right: 0.4em;
+}
