@@ -1,7 +1,8 @@
 import '../css/App.css';
 import React from 'react';
-import { Link, Route, useParams, useRouteMatch } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+
 
 const BlogPost = ({ data }) => {
 

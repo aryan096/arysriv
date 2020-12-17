@@ -34,6 +34,12 @@ hr {
   margin-top: -20px;
 }
 
+.MuiButton-label { 
+  font-family: 'Mukta', sans-serif;
+  color: #A14112;
+  font-weight: bold;
+}
+
 
 /* Common classes end */
 
@@ -78,11 +84,11 @@ hr {
   text-decoration: none;
 }
 .navitem a:hover { 
-  color: #B6465F;
+  color: black;
   text-decoration: underline;
 }
 .navitem a:active { 
-  color: #A14112;
+  color: black;
   text-decoration: underline;
 }
 
@@ -91,6 +97,7 @@ hr {
 /* About stuff beings */
 
 .intro-text { 
+  font-family: 'Langar', cursive;
   font-size: 2.4em;
   margin-top: 0.8em;
   margin-bottom: 0;
@@ -114,33 +121,33 @@ hr {
   margin: 2em;
 }
 
-.about-links { 
+.home-links { 
   list-style-type: none;
   overflow: hidden;
 }
 
-.about-links li { 
+.home-links li { 
   margin: 0.6em;
   font-size: larger;
   font-weight: bold;
 }
 
-.about-links a:link { 
+.home-links a:link { 
   color: #A14112;
   font-weight: bold;
   text-decoration: none;
 }
-.about-links a:visited { 
+.home-links a:visited { 
   color: #A14112;
   font-weight: bold;
   text-decoration: none;
 }
-.about-links a:hover { 
+.home-links a:hover { 
   color: #B6465F;
   font-weight: bold;
   text-decoration: underline;
 }
-.about-links a:active { 
+.home-links a:active { 
   color: #A14112;
   font-weight: bold;
   text-decoration: underline;
@@ -155,8 +162,10 @@ hr {
 
 /* About stuff ends */
 
+/* Footer stuff begins */
+
 .footer-container { 
-  margin-top: 8em;
+  margin-top: 4em;
   margin-bottom: 1.5em;
 }
 
@@ -176,4 +185,214 @@ hr {
 
 .footer-icon { 
   margin-right: 0.4em;
+}
+
+/* Blog stuff begins */
+
+.blog-list {
+  padding: 0;
+}
+
+.blog-card { 
+  background-color: transparent !important;
+  border: 3px solid rgba(0, 0, 0, 0.42) !important;
+  border-radius: 8px !important;
+}
+
+.blog-card h2 { 
+  font-family: 'Mukta', sans-serif;
+}
+
+.blog-card p { 
+  margin-top: 10px;
+  font-family: 'Mukta', sans-serif;
+}
+
+.blog-card-container { 
+  margin: 10px;
+}
+
+/* Blog stuff ends */
+
+/* Project stuff begins */
+
+.proj-list {
+  padding: 0;
+}
+
+.proj-card { 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: transparent !important;
+  border: 3px solid rgba(0, 0, 0, 0.42) !important;
+  border-radius: 8px !important;
+  width: 47%;
+  max-height: 320px;
+}
+
+.proj-card h2 { 
+  font-family: 'Mukta', sans-serif;
+}
+
+.proj-card p { 
+  margin-top: 10px;
+  font-family: 'Mukta', sans-serif;
+}
+
+.project-card-container { 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px;
+  margin-top: 20px;
+}
+
+.project-card-image-container { 
+  background-color: transparent;
+  background: transparent;
+  position: relative;
+  opacity: 1;
+  overflow:hidden;
+}
+
+.project-card-image-container:hover { 
+  opacity: 0.8;
+  color: black;
+  background-color: black;
+  background: black;
+}
+
+
+/* Project stuff end */
+
+ /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+ .flip-card {
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the back side */
+.flip-card-back {
+  transform: rotateY(180deg);
+} 
+
+.navbar-logo-image { 
+  height: 50px;
+  width: 50px;
+}
+
+.name-logo-flip-cards { 
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1.5em;
+  margin-top: 1em;
+}
+
+/* MEDIA QUERY FOR TABLETS */
+@media only screen and (max-width: 728px) {
+  .website-container { 
+    max-width: 80%;
+    margin: auto;
+  }
+}
+
+/* MEDIA QUERY FOR PHONES */
+@media only screen and (max-width: 600px) {
+  .website-container { 
+    max-width: 90%;
+    margin: auto;
+  }
+
+  .intro-text { 
+    text-align: center;
+  }
+
+  .tldr-text { 
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  .portrait-container { 
+    flex-direction: column-reverse;
+  }
+
+  .links-container { 
+    margin-bottom: 0;
+  }
+
+  .home-links { 
+    padding-left: 0;
+  }
+
+  .navbar-container { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navmenu { 
+    padding: 0;
+    margin-top: 10px;
+    padding-bottom: 1em;
+  }
+
+  .proj-list {
+    margin-top: 0;
+  }
+
+  .project-card-container { 
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .proj-card { 
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .section-header { 
+    font-weight: 500;
+    font-size: 1.5em;
+  }
+
+  .footer-icon { 
+    margin-right: 0.4em;
+  }
+
+  .copyright p { 
+    margin-top: -3px;
+    margin-left: 6px;
+    font-size: 14px;
+    margin-right: 1em;
+    color: gray;
+  }
+  
 }

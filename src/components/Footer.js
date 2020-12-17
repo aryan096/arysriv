@@ -17,10 +17,10 @@ function SocialMediaIcons() {
     var github = data.data.links.github;
     return <div>
         <a href={twitter} class='footer-icon'><TwitterIcon fontSize='small' color='action'/></a>
-        <a href={twitter} class='footer-icon'><LinkedInIcon fontSize='small' color='action'/></a>
-        <a href={twitter} class='footer-icon'><FacebookIcon fontSize='small' color='action'/></a>
-        <a href={twitter} class='footer-icon'><InstagramIcon fontSize='small' color='action'/></a>
-        <a href={twitter} class='footer-icon'><GitHubIcon fontSize='small' color='action'/></a>
+        <a href={linkedin} class='footer-icon'><LinkedInIcon fontSize='small' color='action'/></a>
+        <a href={facebook} class='footer-icon'><FacebookIcon fontSize='small' color='action'/></a>
+        <a href={instagram} class='footer-icon'><InstagramIcon fontSize='small' color='action'/></a>
+        <a href={github} class='footer-icon'><GitHubIcon fontSize='small' color='action'/></a>
     </div>
 }
 
