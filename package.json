@@ -2,7 +2,7 @@
   "name": "arysriv",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://aryan096.github.io/arysriv",
+  "homepage": "https://arysriv.com",
   "dependencies": {
     "@bit/wiredjs.wired-elements.wired-card": "^1.0.0",
     "@material-ui/core": "^4.11.2",
