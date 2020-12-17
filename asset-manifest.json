@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/arysriv/static/css/main.60890ec9.chunk.css",
+    "main.js": "/arysriv/static/js/main.f79831a4.chunk.js",
+    "main.js.map": "/arysriv/static/js/main.f79831a4.chunk.js.map",
+    "runtime-main.js": "/arysriv/static/js/runtime-main.01772202.js",
+    "runtime-main.js.map": "/arysriv/static/js/runtime-main.01772202.js.map",
+    "static/css/2.8c13688f.chunk.css": "/arysriv/static/css/2.8c13688f.chunk.css",
+    "static/js/2.32d5b6c4.chunk.js": "/arysriv/static/js/2.32d5b6c4.chunk.js",
+    "static/js/2.32d5b6c4.chunk.js.map": "/arysriv/static/js/2.32d5b6c4.chunk.js.map",
+    "index.html": "/arysriv/index.html",
+    "static/css/2.8c13688f.chunk.css.map": "/arysriv/static/css/2.8c13688f.chunk.css.map",
+    "static/css/main.60890ec9.chunk.css.map": "/arysriv/static/css/main.60890ec9.chunk.css.map",
+    "static/js/2.32d5b6c4.chunk.js.LICENSE.txt": "/arysriv/static/js/2.32d5b6c4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.01772202.js",
+    "static/css/2.8c13688f.chunk.css",
+    "static/js/2.32d5b6c4.chunk.js",
+    "static/css/main.60890ec9.chunk.css",
+    "static/js/main.f79831a4.chunk.js"
+  ]
+}
