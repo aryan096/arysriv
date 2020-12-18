@@ -1,6 +1,5 @@
 import '../css/App.css';
 import React from 'react';
-import PortraitImg from '../images/portraitimg.png'
 import { AwesomeButton } from "react-awesome-button";
 import "react-awesome-button/dist/themes/theme-two.css";
 
@@ -21,7 +20,7 @@ function TLDR(){
 }
 
 function Portrait(){ 
-    return <img class='portrait-img' src={PortraitImg} alt='Portrait of me'></img>
+    return <img class='portrait-img' src='/portraitimg.png' alt='silly portrait of me'></img>
 }
 
 function Links(){ 

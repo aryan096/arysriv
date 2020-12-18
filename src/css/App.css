@@ -118,7 +118,8 @@ hr {
 }
 
 .portrait-img { 
-  margin: 2em;
+  margin-right: 6em;
+  height: 400px;
 }
 
 .home-links { 
@@ -157,6 +158,7 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin-bottom: 2em;
 }
 
@@ -341,6 +343,12 @@ hr {
 
   .portrait-container { 
     flex-direction: column-reverse;
+  }
+
+  .portrait-img { 
+    scale: 80%;
+    height: auto;
+    margin: 0;
   }
 
   .links-container { 
