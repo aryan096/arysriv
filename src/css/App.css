@@ -21,8 +21,8 @@ body {
 /* Common classes begin */
 
 .section-header { 
-  font-weight: 500;
   font-weight: bold;
+  font-family: 'Alegreya', serif;
 }
 
 hr { 
@@ -48,7 +48,6 @@ hr {
 .name-logo {
   color: #A14112;
   text-decoration: none;
-  font-family: 'Langar', cursive;
   font-size: 1.4em;
 }
 
@@ -390,8 +389,9 @@ hr {
   }
 
   .section-header { 
-    font-weight: 500;
+    font-weight: bold;
     font-size: 1.5em;
+    font-family: 'Alegreya', serif;
   }
 
   .footer-icon { 
