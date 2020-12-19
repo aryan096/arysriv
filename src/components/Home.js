@@ -20,7 +20,7 @@ function TLDR(){
 }
 
 function Portrait(){ 
-    return <img class='portrait-img' src='/portraitimg.png' alt='silly portrait of me'></img>
+    return <img class='portrait-img' src='/portraitimg_outline.png' alt='silly portrait of me'></img>
 }
 
 function Links(){ 
