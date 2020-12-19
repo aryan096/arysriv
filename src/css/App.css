@@ -6,7 +6,7 @@ html {
 
 body {
   background-color: #FCF6ED;
-  font-family: 'Mukta', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .App {
@@ -35,7 +35,7 @@ hr {
 }
 
 .MuiButton-label { 
-  font-family: 'Mukta', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #A14112;
   font-weight: bold;
 }
@@ -97,10 +97,11 @@ hr {
 /* About stuff beings */
 
 .intro-text { 
-  font-family: 'Langar', cursive;
-  font-size: 2.4em;
+  font-family: 'Alegreya', serif;
+  font-size: 2.8em;
   margin-top: 0.8em;
   margin-bottom: 0;
+  padding-left: 20px;
 }
 
 .tldr { 
@@ -108,7 +109,8 @@ hr {
 }
 
 .tldr-text { 
-  font-size: 1.5em;
+  font-size: 1.3em;
+  padding: 0px 20px 10px 20px;
 }
 
 .portrait-container {
@@ -125,6 +127,7 @@ hr {
 .home-links { 
   list-style-type: none;
   overflow: hidden;
+  padding-left: 20px;
 }
 
 .home-links li { 
@@ -159,7 +162,7 @@ hr {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 /* About stuff ends */
@@ -167,7 +170,7 @@ hr {
 /* Footer stuff begins */
 
 .footer-container { 
-  margin-top: 4em;
+  margin-top: 2em;
   margin-bottom: 1.5em;
 }
 
@@ -202,12 +205,12 @@ hr {
 }
 
 .blog-card h2 { 
-  font-family: 'Mukta', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .blog-card p { 
   margin-top: 10px;
-  font-family: 'Mukta', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .blog-card-container { 
@@ -234,12 +237,12 @@ hr {
 }
 
 .proj-card h2 { 
-  font-family: 'Mukta', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .proj-card p { 
   margin-top: 10px;
-  font-family: 'Mukta', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .project-card-container { 

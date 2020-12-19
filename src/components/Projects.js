@@ -75,7 +75,7 @@ function ProjectList(){
             </Route>
 
             <Route exact path={url}>
-                <h1 class='section-header'>Some projects I have done</h1>
+                <h1 class='section-header'>Some things that I have worked on..</h1>
                 <ul class='proj-list'>{linkList}</ul>
             </Route>
         </div>;

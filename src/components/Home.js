@@ -16,7 +16,7 @@ function IntroText(){
 
 function TLDR(){ 
     return <p class='tldr-text'>
-        <span class='tldr'>TL;DR: </span>{data.data.tldr_text}</p>
+        <span class='tldr'></span>{data.data.tldr_text}</p>
 }
 
 function Portrait(){ 
