@@ -93,7 +93,7 @@ hr {
 
 /* Navbar stuff ends */
 
-/* About stuff beings */
+/* Home stuff beings */
 
 .intro-text { 
   font-family: 'Alegreya', serif;
@@ -162,6 +162,18 @@ hr {
   align-items: center;
   justify-content: center;
   margin-bottom: 1em;
+}
+
+/* Home stuff ends */
+
+/* About stuff begins */
+
+.about-text-container{ 
+  padding: 0px 20px 10px 20px;
+}
+
+.about-text { 
+  font-size: 1.2em;
 }
 
 /* About stuff ends */
