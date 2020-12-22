@@ -279,6 +279,38 @@ hr {
   background: black;
 }
 
+.project-info-container p{ 
+  font-size: 20px;
+}
+
+.project-info-container li{ 
+  font-size: 18px;
+}
+
+.project-info-container strong{ 
+  color: darkmagenta;
+}
+
+.project-info-container em{ 
+  color: darkslateblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: smaller;
+}
+
+.project-info-container a{ 
+  color: darkred;
+  background-color: rgba(255, 0, 0, 0.18);
+}
+
+.project-info-container img { 
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 2em;
+  width: 70%;
+}
 
 /* Project stuff end */
 
@@ -330,6 +362,8 @@ hr {
   margin-bottom: 1.5em;
   margin-top: 1em;
 }
+
+
 
 /* MEDIA QUERY FOR TABLETS */
 @media only screen and (max-width: 728px) {

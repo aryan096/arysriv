@@ -11,8 +11,8 @@ const ProjectPost = ({ data }) => {
     const project = data.find(b => b.id === Number(projectId));
     const project_content = project.content;
 
-    return <div>
-            <h1>{project.title}</h1>
+    return <div class='project-info-container'>
+            <h1 class='section-header'>{project.title}</h1>
             <ReactMarkdown source={project_content} />
         </div>
 
