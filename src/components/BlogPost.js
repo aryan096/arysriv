@@ -11,10 +11,10 @@ const BlogPost = ({ data }) => {
     const blog = data.find(b => b.id === Number(blogId));
     const blog_content = blog.content;
 
-    return <div>
-            <h1>{blog.title}</h1>
-            <ReactMarkdown source={blog_content} />
-        </div>
+    return <div class='blog-post-container'>
+    <h1 class='section-header'>{blog.title}</h1>
+    <ReactMarkdown source={blog_content} />
+</div>
 
 }
 

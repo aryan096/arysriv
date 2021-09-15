@@ -1,6 +1,57 @@
 export const projData = [
     {
         id: 1,
+        title: 'Uttar Pradesh Elections \'21 Candidates Affidavits Data',
+        description: 'Scraping UP State Election Commission Website to download the affidavits of all the candidates.',
+        card_image: '/up_map.jpg',
+        card_image_alt: 'UP SEC',
+        content: 
+        '## Overview \n' +
+        'This page contains data about all the candidates running in the Uttar Pradesh 2021 Panchayat Elections that I scraped from ' + 
+        'the [State Election Commission Website](http://sec.up.nic.in/site/DownloadCandidateFaDebt.aspx). ' + 
+        'Each row (a candidate) contains data about the candidates name, income, criminal background, caste group, education, votes earned, votes percentage, and property value.' +
+        '\n\nI used Selenium for Python to do the scraping.' + 
+        '\n\n- Gram Panchayat Pradhan Candidates - [Drive link](https://drive.google.com/file/d/1-iFy7AiO82yQG223dzq82WOMxV9kecXR/view?usp=sharing)' + 
+        '\n- Zila Panchayat Sadasya Candidates - [Drive link](https://drive.google.com/file/d/1SK2GEzrDCYpzFIYshV4GVjQ9L0adQvfh/view?usp=sharing)' + 
+        '\n- Zila Panchayat Adhyaksh Candidates - [Drive link](https://drive.google.com/file/d/1tUIniuNOJROftFg_VpozUcvl3l3B2XrR/view?usp=sharing)' +
+        '\n\nThe code I used is in [this Github repo.]()'
+    },
+    {
+        id: 2,
+        title: 'Situation Entity Type Classification Models',
+        description: 'State-of-the-art models to classify clauses based on Genericity, Aspect, and Boundedness.',
+        card_image: '/model_cover.png',
+        card_image_alt: 'SE Type Models',
+        content: 
+        '## Overview \n' +
+        'As part of a research group with Sloman Lab and Brown AI Lab, I created deep learning models to classify clauses by its genericity, aspect, and bounedness.' + 
+        '\n\nAll the code for the project is in [this Github repo](https://github.com/BabakHemmatian/Marijuana_Legalization_Corpus_Study).' + 
+        '\n\nSpecifically, the code I wrote to create and test the models is in [this Colab document](https://colab.research.google.com/drive/11AIYTZIahSm1uFrbTTGOSHaSKKxNmJ2G?usp=sharing).\n\n' + 
+        '## Models \n' +
+        '\n\nI trained models for classifying clauses\' **main referent**, **fundamental aspectual class**, and **boundedness**.' +
+        '\n\n- Main referent - Is the thing that the clause is about specific, a particular entity, or generic, a class of entities? **(GENERIC or SPECIFIC)**' +
+        '\n\n- Fundamental Aspectual Class - in regards to the main verb+modifiers, what category does that verb fall into in terms of how it works? **(DYNAMIC or STATIVE)**' + 
+        '\n\n- Boundedness - Is the event being described bounded temporally? Is it described as having a starting point (left-hand boundary), an ending point (right-hand boundary), or both? **(BOUNDED or UNBOUNDED)**' +
+        '\n## Results \n' + 
+        'All three final models are (as of 30th August 2021) either novel, or state-of-the-art. The trained models are available [here](https://drive.google.com/drive/u/0/folders/17PjV5gPub15kSaHpw9JVP1SNpj1k3vK-).\n' +
+        '- Genericity model; trained on Sitent and Reddit data; tested on Reddit data.\n' + 
+        '![Genericity Metrics](/setype_models/genericity_metrics.png)\n\n' +
+        '- Aspect model; trained on Sitent and Reddit data; tested on Reddit data.\n' + 
+        '![Aspect Metrics](/setype_models/aspect_metrics.png)\n\n' +
+        '- Boundedness model; trained on Reddit data; tested on Reddit data.\n' + 
+        '![Boundedness Metrics](/setype_models/boundedness_metrics.png)' 
+    },
+    {
+        id: 3,
+        title: 'The Bird House',
+        description: 'Building better community spaces and supporting local artists, creators, and innovators in Lucknow, India.',
+        card_image: '/tbh/cover.png',
+        card_image_alt: 'The Bird House',
+        content:
+        '## Coming soon... \n'  
+    },
+    {
+        id: 4,
         title: 'Weenix Operating System',
         description: 'Implementation of the Weenix (wee-unix) OS Kernel.',
         card_image: '/weenix_cover.png',
@@ -25,7 +76,7 @@ export const projData = [
         '*Testing results for the file system*' 
     },
     {
-        id: 2,
+        id: 5,
         title: 'Liszt-Comprehension',
         description: 'Generating classical-ish music using transformers.',
         card_image: '/liszt_cover.png',
@@ -40,25 +91,34 @@ export const projData = [
         '*A poster with an in-depth overview of the project*'
     },
     {
-        id: 3,
+        id: 6,
         title: 'Tracking the trackers',
         description: 'Visualizing tracker presence during browsing sessions using a modified Privacy Badger.',
         card_image: '/tracker_cover.png',
         card_image_alt: 'tracking the trackers',
         content:
-        '# Coming soon...'
+        '## Overview \n' + 
+        'As the research project for **Privacy Conscious Computer Systems (CS2390)** - a grad-level course in the CS department, I worked on creating a tool to help people better understand how they get tracked on the internet. I created a web-app using **React.JS** that visualized data about trackers collected using a version of **Privacy Badger** - an extension for Firefox and Google - that I modified. The visualizations were made using the **D3.js** library. \n\n' +
+        'You can find the github repo [here](https://github.com/aryan096/PrivacyBadgerDataViz)!\n\n' + 
+        'You can find the modified Privacy Badger [here](https://github.com/aryan096/privacybadger)!\n\n' + 
+        'The final project report paper with more info is [here](/trackerviz/writeup.pdf)!\n\n' + 
+        '![Homepage](/tracker_cover.png)\n' + 
+        '*The homepage of the web-app*'
     },
     {
-        id: 4,
+        id: 7,
         title: 'My Home That Day',
         description: 'A view of our home planet in the past.',
         card_image: '/myhomethatday.png',
         card_image_alt: 'myhomethatday',
         content:
-        '# Coming soon...'
+        '## About this project\n'+ 
+        'You can visit the website at [www.myhomethatday.com](http://www.myhomethatday.com/)!\n\n'+
+        'I designed and created this website in collaboration with a friend (thanks, Niyo!). We planned out the design in **Figma**, decided on the technologies to use, and developed this website in a total of **~4 hours**!\n\n' + 
+        'We used **Django** as our web framework, used the [EPIC API](https://api.nasa.gov/) from NASA, and hosted our website on a [Linode](https://www.linode.com).'
     },
     {
-        id: 5,
+        id: 8,
         title: 'CIT Machine Status Web App',
         description: 'Solving the struggle to find an open machine in the CIT.',
         card_image: '/where2cit_cover.png',

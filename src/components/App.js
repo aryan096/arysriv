@@ -6,7 +6,8 @@ import Home from './Home.js'
 import Blog from './Blog.js'
 import Footer from './Footer.js'
 import { Route, Switch } from 'react-router-dom'
-
+import Photography from './Photography';
+import React from 'react';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/about"><About /></Route>
         <Route path="/blog"><Blog /></Route>
         <Route path="/projects"><Projects /></Route>
+        <Route path="/photography"><Photography /></Route>
       </Switch>
 
       <Footer />

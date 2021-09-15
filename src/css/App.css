@@ -6,7 +6,7 @@ html {
 
 body {
   background-color: #FCF6ED;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Crimson Text', serif;
 }
 
 .App {
@@ -21,7 +21,6 @@ body {
 /* Common classes begin */
 
 .section-header { 
-  font-weight: bold;
   font-family: 'Alegreya', serif;
 }
 
@@ -99,8 +98,8 @@ hr {
   font-family: 'Alegreya', serif;
   font-size: 2.8em;
   margin-top: 0.8em;
+  text-align: center;
   margin-bottom: 0;
-  padding-left: 20px;
 }
 
 .tldr { 
@@ -109,13 +108,7 @@ hr {
 
 .tldr-text { 
   font-size: 1.3em;
-  padding: 0px 20px 10px 20px;
-}
-
-.portrait-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  padding: 0px 0px 10px 0px;
 }
 
 .portrait-img { 
@@ -127,6 +120,7 @@ hr {
   list-style-type: none;
   overflow: hidden;
   padding-left: 20px;
+  text-align: center;
 }
 
 .home-links li { 
@@ -169,7 +163,7 @@ hr {
 /* About stuff begins */
 
 .about-text-container{ 
-  padding: 0px 20px 10px 20px;
+  padding: 0px 0px 10px 0px;
 }
 
 .about-text { 
@@ -228,6 +222,44 @@ hr {
   margin: 10px;
 }
 
+.blog-post-container { 
+  padding: 30px;
+}
+
+.blog-post-container p{ 
+  font-size: 20px;
+  line-height: 2;
+  width: 90%;
+}
+
+.blog-post-container li{ 
+  font-size: 18px;
+}
+
+.blog-post-container strong{ 
+  color: darkmagenta;
+}
+
+.blog-post-container em{ 
+  color: darkslateblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: smaller;
+}
+
+.blog-post-container a{ 
+  color: darkred;
+  background-color: rgba(255, 0, 0, 0.18);
+}
+
+.blog-post-container img { 
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 2em;
+  width: 70%;
+}
 /* Blog stuff ends */
 
 /* Project stuff begins */
@@ -248,19 +280,19 @@ hr {
 }
 
 .proj-card h2 { 
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Merriweather', serif;
 }
 
 .proj-card p { 
   margin-top: 10px;
-  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-family: 'Crimson Text', serif;
 }
 
 .project-card-container { 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 5px;
   margin-top: 20px;
 }
 
@@ -436,7 +468,6 @@ hr {
   }
 
   .section-header { 
-    font-weight: bold;
     font-size: 1.5em;
     font-family: 'Alegreya', serif;
   }
@@ -452,5 +483,30 @@ hr {
     margin-right: 1em;
     color: gray;
   }
+
+  .blog-post-container { 
+    padding: 10px;
+  }
   
+  .blog-post-container p{ 
+    font-size: 16px;
+    line-height: 2;
+    width: 90%;
+  }
+
+  .blog-post-container img{ 
+    width: 100%;
+  }
+  
+  .project-info-container p{ 
+    font-size: 16px;
+  }
+
+  .project-info-container li{ 
+    font-size: 16px;
+  }
+
+  .project-info-container img{ 
+    width: 100%;
+  }
 }

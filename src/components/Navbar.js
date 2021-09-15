@@ -12,7 +12,8 @@ function Nav() {
                 <NavItem link='/' value='Home' />
                 <NavItem link='/about' value='About' />
                 <NavItem link='/projects' value='Projects' />
-                <NavItem link='/blog' value='Blog' />
+                <NavItem link='/photography' value='Photography' />
+                {/* <NavItem link='/blog' value='Blog' /> */}
             </ul>
     </div>;
 }
