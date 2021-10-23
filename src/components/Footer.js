@@ -32,7 +32,7 @@ export default class About extends React.Component {
                 <hr />
                 <div class='copyright'>
                     <CopyrightIcon fontSize='small' color='action'/>
-                    <p>Aryan Srivastava 2021. Made using React :)</p>
+                    <p>Dhruv Bhatia 2021. Made using React :)</p>
                     <SocialMediaIcons />
                 </div>
 

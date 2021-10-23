@@ -383,6 +383,10 @@ hr {
   transform: rotateY(180deg);
 } 
 
+.name-logo { 
+  margin: 1em;
+}
+
 .navbar-logo-image { 
   height: 50px;
   width: 50px;
