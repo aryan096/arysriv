@@ -6,7 +6,8 @@ import "react-awesome-button/dist/themes/theme-two.css";
 var data = require('../public/data.js');
 
 function ResumeDownloadButton() {
-    return <a href='/AryanSrivastavaResume.pdf'><AwesomeButton type="primary">Download My Résumé</AwesomeButton></a>;
+    var link = data.data.links.resume;
+    return <a href={link}><AwesomeButton type="primary">Download My Résumé</AwesomeButton></a>;
 }
 
 function IntroText(){ 
@@ -26,10 +27,9 @@ function TLDR(){
 function Links(){ 
     return <div class='links-container'>
             <ul class='home-links'>
-                <li>Email: <a href={data.data.links.email}>dhruv_bhatia@brown.edu</a></li>
-                <li>Twitter: <a href={data.data.links.twitter}>@</a></li>
-                <li>Github: <a href={data.data.links.github}>@</a></li>
-                {/* <li>My Portfolio: <a href={data.data.links.behance}>@curiousary</a></li> */}
+                <li>Email: <a href={'mailto:' + data.data.links.email}>{data.data.links.email}</a></li>
+                <li>Twitter: <a href={data.data.links.twitter}>{'@' + data.data.links.twitter}</a></li>
+                <li>Github: <a href={data.data.links.github}>{'@' + data.data.links.github}</a></li>
             </ul>
             <ResumeDownloadButton />
         </div>

@@ -1,6 +1,8 @@
 import '../css/App.css';
 import React from 'react';
 import { Link } from 'react-router-dom'
+var data = require('../public/data.js');
+
 
 function NavItem(props) { 
     return <li class='navitem'><Link to={props.link}>{props.value}</Link></li>;
@@ -11,7 +13,7 @@ function Nav() {
             <ul class='navmenu'>
                 <NavItem link='/' value='Home' />
                 <NavItem link='/about' value='About' />
-                <NavItem link='/projects' value='Blog' />
+                <NavItem link='/projects' value='Work' />
                 {/* <NavItem link='/photography' value='Photography' /> */}
                 {/* <NavItem link='/blog' value='Blog' /> */}
             </ul>
@@ -20,7 +22,7 @@ function Nav() {
 
 function NameLogo() {
     return <Link class='name-logo' to='/'>
-        Dhruv Bhatia
+        <img class='portrait-img' src={data.data.logo} alt='silly portrait of me'></img>
     </Link>;
 }
 

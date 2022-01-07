@@ -114,6 +114,7 @@ hr {
 .portrait-img { 
   margin-right: 6em;
   height: 400px;
+  max-height: 3em;
 }
 
 .home-links { 
