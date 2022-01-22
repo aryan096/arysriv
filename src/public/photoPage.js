@@ -16,16 +16,11 @@ export const photos = [
     },
     {
       src: '/photos/governer.jpg',
-      width: 4,
+      width: 3,
       height: 3
     },
     {
       src: '/photos/leh_moon.jpg',
-      width: 4,
-      height: 3
-    },
-    {
-      src: '/photos/lighter_art.jpg',
       width: 4,
       height: 3
     },
@@ -40,12 +35,27 @@ export const photos = [
       height: 3
     },
     {
-      src: '/photos/noot.jpg',
+      src: '/photos/rain_run.jpg',
       width: 4,
       height: 3
     },
     {
-      src: '/photos/rain_run.jpg',
+      src: '/photos/mueza.jpeg',
+      width: 4,
+      height: 3
+    },
+    {
+      src: '/photos/alien.jpeg',
+      width: 4,
+      height: 3
+    },
+    {
+      src: '/photos/bnw.jpeg',
+      width: 4,
+      height: 3
+    },
+    {
+      src: '/photos/blueorb.jpeg',
       width: 4,
       height: 3
     },

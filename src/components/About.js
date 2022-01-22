@@ -3,12 +3,14 @@ import React from 'react';
 
 function AboutInfo() { 
     return  <div class='about-text-container'>
-        <p class='about-text'>I was born and raised in Lucknow, India and am currently studying Computer Science at Brown University - Class of 2022.5.
+        <p class='about-text'>I was born and raised in Lucknow, India and am currently a senior studying Computer Science at Brown University.
             <br /><br />
-            As an Undergraduate Research Assistant, I have created state-of-the-art deep learning models to clauses based on certain linguistic properties to help study discourse and narrative evolution on Reddit.
-            For a different project, I have been collecting and analyzing India's socio-economic and political data to study hate speech patterns on a popular Indian social media platform.
+            I have mostly been working as an Undergraduate Research Assistant. I have created state-of-the-art neural networks to classify text based on clause-level linguistic features - genericity, aspect, and boundedness. The models are being used to study discourse structures and evolution of political narratives on Reddit.
             <br /><br />
-            I believe technology, and social media in particular has a big impact on society and our psychology. Using computation and data, I want to better understand these effects.
+            For a different project, I created the first clean geolocated dataset of villages and Panchayat (village-level) elections candidates in Uttar Pradesh - India's most populous state. Using this data, and other socio-economic data, we are studying the patterns of hate speech on ShareChat - a huge social media platform in India.
+            India's socio-economic and political data to study hate speech patterns on a popular Indian social media platform.
+            <br /><br />
+            I am immensely interested in the field of Computational Social Science. I love everything data, and want to utilize its power to diagnose the social and political effects of technology and the internet.
             <br /><br />
             My favorite hobbies are photography, digital art, and cooking. 
             <br /><br />

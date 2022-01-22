@@ -1,20 +1,17 @@
 export const projData = [
     {
         id: 1,
-        title: 'Uttar Pradesh Elections \'21 Candidates Affidavits Data',
-        description: 'Scraping UP State Election Commission Website to download the affidavits of all the candidates.',
+        title: 'Uttar Pradesh Panchayat Elections Data',
+        description: 'Scraping UP State Election Commission Website and geolocating villages.',
         card_image: '/up_map.jpg',
         card_image_alt: 'UP SEC',
         content: 
-        '## Overview \n' +
-        'This page contains data about all the candidates running in the Uttar Pradesh 2021 Panchayat Elections that I scraped from ' + 
+        'To study the impact the political shocks from village level elections have on the patterns of hate speech on ShareChat - a huge Indian social media platform, I collected data about winners and runner-ups in the Uttar Pradesh 2015 and 2021 Panchayat Elections. I also geolocated the villages using Google Maps API. I scraped the data from ' + 
         'the [State Election Commission Website](http://sec.up.nic.in/site/DownloadCandidateFaDebt.aspx). ' + 
-        'Each row (a candidate) contains data about the candidates name, income, criminal background, caste group, education, votes earned, votes percentage, and property value.' +
+        'Each row (a candidate) contains data about the candidates name, income, criminal background, caste group, education, votes earned, votes percentage, and property value, along with the coordinates of the village.' +
         '\n\nI used Selenium for Python to do the scraping.' + 
-        '\n\n- Gram Panchayat Pradhan Candidates - [Drive link](https://drive.google.com/file/d/1-iFy7AiO82yQG223dzq82WOMxV9kecXR/view?usp=sharing)' + 
-        '\n- Zila Panchayat Sadasya Candidates - [Drive link](https://drive.google.com/file/d/1SK2GEzrDCYpzFIYshV4GVjQ9L0adQvfh/view?usp=sharing)' + 
-        '\n- Zila Panchayat Adhyaksh Candidates - [Drive link](https://drive.google.com/file/d/1tUIniuNOJROftFg_VpozUcvl3l3B2XrR/view?usp=sharing)' +
-        '\n\nThe code I used is in [this Github repo.]()'
+        'The code for scraping and processing is in this [Github Repo](https://github.com/aryan096/Uttar-Pradesh-2015-2021-Panchayat-Candidates).' + 
+        '\n\n[Link to the code](https://docs.google.com/spreadsheets/d/1N0ckOqUFFjrlGK6mWwV6mLplNetOrN03VyTtCFuQu8I/edit?usp=sharing).'
     },
     {
         id: 2,
