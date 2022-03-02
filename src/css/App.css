@@ -1,5 +1,4 @@
 @import './fonts.css';
-
 html {
   scroll-behavior: smooth;
 }
@@ -19,6 +18,16 @@ body {
 }
 
 /* Common classes begin */
+
+.document, iframe {
+  margin: 0 auto;
+  background-color: #FCF6ED;
+}
+
+iframe {
+  display: block;
+  border-style:none;
+}
 
 .section-header { 
   font-family: 'Alegreya', serif;

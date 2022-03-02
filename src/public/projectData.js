@@ -5,13 +5,35 @@ export const projData = [
         description: 'Scraping UP State Election Commission Website and geolocating villages.',
         card_image: '/up_map.jpg',
         card_image_alt: 'UP SEC',
-        content: 
+        doc1: '/documents/Panchayat.pdf',
+        doc2: '',
+        doc3: '',
+        content: '### Data Science Fellow - Fall 2021 \n' + 
         'To study the impact the political shocks from village level elections have on the patterns of hate speech on ShareChat - a huge Indian social media platform, I collected data about winners and runner-ups in the Uttar Pradesh 2015 and 2021 Panchayat Elections. I also geolocated the villages using Google Maps API. I scraped the data from ' + 
         'the [State Election Commission Website](http://sec.up.nic.in/site/DownloadCandidateFaDebt.aspx). ' + 
         'Each row (a candidate) contains data about the candidates name, income, criminal background, caste group, education, votes earned, votes percentage, and property value, along with the coordinates of the village.' +
         '\n\nI used Selenium for Python to do the scraping.' + 
-        'The code for scraping and processing is in this [Github Repo](https://github.com/aryan096/Uttar-Pradesh-2015-2021-Panchayat-Candidates).' + 
-        '\n\n[Link to the code](https://docs.google.com/spreadsheets/d/1N0ckOqUFFjrlGK6mWwV6mLplNetOrN03VyTtCFuQu8I/edit?usp=sharing).'
+        '\n\nThe code for the scraping and processing, as well as the data, can be found in this [Github Repo](https://github.com/aryan096/Uttar-Pradesh-2015-2021-Panchayat-Candidates).' + 
+        '\nPreprint published in SocArXiv [here](https://osf.io/preprints/socarxiv/d6w2h/). You can also view the paper here -'
+    },
+    {
+        id: 2,
+        title: 'Early Student Feedback Analysis and Visualization Tools',
+        description: 'Sheridan Center for Teaching and Learning',
+        card_image: '/dsf/cover.png',
+        card_image_alt: 'Early Student Feedback Tools',
+        doc1: '/documents/DSF Final Summary.pdf',
+        doc2: '',
+        doc3: '',
+        content: 
+        '### Data Science Fellow - Fall 2021 \n' + 
+        'As a Data Science Fellow, I worked with the Sheridan Center for Teaching and Learning at Brown University to build tools to analyze and visualize open-ended survey responses from the Early Student Feedback Process. ' + 
+        '\n\n The Early Student Feedback Process is a mid-semester course feedback system that collects open ended responses from students in Stage 1, and gauges agreement on statements constructed from Stage 1 responses. ' +
+        'This process allows courses to make changes mid-semester by effectively collecting feedback and analyzing it in a methodical manner. However, the analysis of the data can be time consuming, and this process has therefore been limited to small classes. ' + 
+        '\n\nThroughout the semester, I built analysis and visualization tools that decreased the analysis time considerably. The Sheridan Center is now able to conduct the feedback process for larger classes, and has integrated the tools into their workflow. ' + 
+        '\nI analyze open ended responses using Python and its powerful libraries. I focus on learning consensus feedback in the responses by utliizing Natural Language Processing methods. I further built visualization tools that generate a PDF report to effectively communicate analysis to faculty members.' +
+        '\n\nHere is a document summarizing my work -' + 
+        '\n\n'
     },
     {
         id: 2,
@@ -19,6 +41,9 @@ export const projData = [
         description: 'State-of-the-art models to classify clauses based on Genericity, Aspect, and Boundedness.',
         card_image: '/model_cover.png',
         card_image_alt: 'SE Type Models',
+        doc1: '',
+        doc2: '',
+        doc3: '',
         content: 
         '## Overview \n' +
         'As part of a research group with Sloman Lab and Brown AI Lab, I created deep learning models to classify clauses by its genericity, aspect, and bounedness.' + 
@@ -38,21 +63,27 @@ export const projData = [
         '- Boundedness model; trained on Reddit data; tested on Reddit data.\n' + 
         '![Boundedness Metrics](/setype_models/boundedness_metrics.png)' 
     },
-    {
-        id: 3,
-        title: 'The Bird House',
-        description: 'Building better community spaces and supporting local artists, creators, and innovators in Lucknow, India.',
-        card_image: '/tbh/cover.png',
-        card_image_alt: 'The Bird House',
-        content:
-        '## Coming soon... \n'  
-    },
+    // {
+    //     id: 3,
+    //     title: 'The Bird House',
+    //     description: 'Building better community spaces and supporting local artists, creators, and innovators in Lucknow, India.',
+    //     card_image: '/tbh/cover.png',
+    //     card_image_alt: 'The Bird House',
+    //     doc1: '',
+    //     doc2: '',
+    //     doc3: '',
+    //     content:
+    //     '## Coming soon... \n'  
+    // },
     {
         id: 4,
         title: 'Weenix Operating System',
         description: 'Implementation of the Weenix (wee-unix) OS Kernel.',
         card_image: '/weenix_cover.png',
         card_image_alt: 'Weenix OS',
+        doc1: '',
+        doc2: '',
+        doc3: '',
         content:
         '## Overview \n' + 
         'In **Spring 2020**, my sophomore spring semester, I implemented the majority of an operating system kernel called "Weenix" as part of **CSCI1670: Operating Systems** course (and its optional half-credit lab **CSCI1690: Operating Systems Laboratory**) at Brown University. Because of COVID-19 and college campus closures, it was quite challenging to complete this project. I was able to finish the implementation with a week left! \n\n' +
@@ -78,6 +109,9 @@ export const projData = [
         description: 'Generating classical-ish music using transformers.',
         card_image: '/liszt_cover.png',
         card_image_alt: 'Liszt Comprehension',
+        doc1: '',
+        doc2: '',
+        doc3: '',
         content: 
         '## Overview \n' + 
         'As the final project for **Deep Learning (CS1470)**, I, along with three teammates, created a model to generate classical music (although, it sounded more jazzy in the end!). \n\n' +
@@ -93,6 +127,9 @@ export const projData = [
         description: 'Visualizing tracker presence during browsing sessions using a modified Privacy Badger.',
         card_image: '/tracker_cover.png',
         card_image_alt: 'tracking the trackers',
+        doc1: '',
+        doc2: '',
+        doc3: '',
         content:
         '## Overview \n' + 
         'As the research project for **Privacy Conscious Computer Systems (CS2390)** - a grad-level course in the CS department, I worked on creating a tool to help people better understand how they get tracked on the internet. I created a web-app using **React.JS** that visualized data about trackers collected using a version of **Privacy Badger** - an extension for Firefox and Google - that I modified. The visualizations were made using the **D3.js** library. \n\n' +
@@ -108,6 +145,9 @@ export const projData = [
         description: 'A view of our home planet in the past.',
         card_image: '/myhomethatday.png',
         card_image_alt: 'myhomethatday',
+        doc1: '',
+        doc2: '',
+        doc3: '',
         content:
         '## About this project\n'+ 
         'You can visit the website at [www.myhomethatday.com](http://www.myhomethatday.com/)!\n\n'+
@@ -120,6 +160,9 @@ export const projData = [
         description: 'Solving the struggle to find an open machine in the CIT.',
         card_image: '/where2cit_cover.png',
         card_image_alt: 'CIT Machine Status',
+        doc1: '',
+        doc2: '',
+        doc3: '',
         content:
         '# Coming soon...'
     },
