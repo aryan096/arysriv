@@ -27,7 +27,7 @@ function Links(){
     return <div class='links-container'>
             <ul class='home-links'>
                 <li>Email: <a href={data.data.links.email}>aryan_srivastava@brown.edu</a></li>
-                <li>Twitter: <a href={data.data.links.twitter}>@ughhryan</a></li>
+                <li>Twitter: <a href={data.data.links.twitter}>@ary_sriv</a></li>
                 <li>Github: <a href={data.data.links.github}>@aryan_096</a></li>
                 {/* <li>My Portfolio: <a href={data.data.links.behance}>@curiousary</a></li> */}
             </ul>
