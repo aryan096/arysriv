@@ -10,10 +10,22 @@
 <div class="home-screen">
 	<!-- Central content -->
 	<div class="home-content">
-		<div class="ascii-art">
+		<!-- Desktop: single line -->
+		<div class="ascii-art desktop-only">
 			<pre>
    ▄▀█ █▀█ █▄█ ▄▀█ █▄ █   █▀ █▀█ █ █ █ ▄▀█ █▀ ▀█▀ ▄▀█ █ █ ▄▀█
    █▀█ █▀▄  █  █▀█ █ ▀█   ▄█ █▀▄ █ ▀▄▀ █▀█ ▄█  █  █▀█ ▀▄▀ █▀█
+			</pre>
+		</div>
+		<!-- Mobile: two lines -->
+		<div class="ascii-art mobile-only">
+			<pre>
+   ▄▀█ █▀█ █▄█ ▄▀█ █▄ █
+   █▀█ █▀▄  █  █▀█ █ ▀█
+			</pre>
+			<pre>
+   █▀ █▀█ █ █ █ ▄▀█ █▀ ▀█▀ ▄▀█ █ █ ▄▀█
+   ▄█ █▀▄ █ ▀▄▀ █▀█ ▄█  █  █▀█ ▀▄▀ █▀█
 			</pre>
 		</div>
 		
@@ -66,10 +78,20 @@
 	
 	.ascii-art {
 		margin: 2rem 0;
-		filter: drop-shadow(0 0 8px var(--color-accent-bright));
+		filter: drop-shadow(0 0 4px var(--color-accent-bright));
 		display: flex;
+		flex-direction: column;
+		align-items: center;
 		justify-content: center;
 		width: 100%;
+	}
+
+	.desktop-only {
+		display: flex;
+	}
+
+	.mobile-only {
+		display: none;
 	}
 	
 	.ascii-art pre {
@@ -126,9 +148,18 @@
 		.home-screen {
 			padding: 1rem;
 		}
+
+		.desktop-only {
+			display: none;
+		}
+
+		.mobile-only {
+			display: flex;
+			gap: 1rem;
+		}
 		
 		.ascii-art pre {
-			font-size: 14px;
+			font-size: 12px;
 		}
 		
 		.status-text {
