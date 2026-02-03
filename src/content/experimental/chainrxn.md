@@ -7,6 +7,7 @@ tags:
   - Game Design
   - SvelteKit
 published: true
+liveUrl: https://chainrxn.arysriv.com/
 ---
 
 ## Overview
@@ -22,4 +23,3 @@ I designed and implemented the multiplayer loop, client interactions, and real-t
 - Real-time multiplayer sessions
 - Lightweight, responsive UI
 - Built end-to-end with SvelteKit
-

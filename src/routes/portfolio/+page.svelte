@@ -22,11 +22,13 @@
 	{:else}
 		<div class="space-y-6">
 			{#each data.projects as project}
-				<a 
-					href="/portfolio/{project.slug}" 
-					class="card-link block p-5 bg-[var(--color-bg-secondary)] rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent-bright)] transition-colors group"
-				>
-					<div class="flex flex-col gap-2">
+				<article class="relative p-5 bg-[var(--color-bg-secondary)] rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent-bright)] transition-colors group">
+					<a 
+						href="/portfolio/{project.slug}"
+						class="absolute inset-0 rounded-lg z-0"
+						aria-label={`View ${project.title}`}
+					></a>
+					<div class="relative z-10 flex flex-col gap-2">
 						<h2 class="text-lg font-medium group-hover:text-[var(--color-accent)] transition-colors">
 							{project.title}
 						</h2>
@@ -51,8 +53,20 @@
 								</div>
 							{/if}
 						</div>
+						{#if project.liveUrl}
+							<div class="mt-3">
+								<a
+									href={project.liveUrl}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="card-button relative z-20 inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide border border-[var(--color-border)] rounded-md bg-[var(--color-bg)] text-[var(--color-accent-bright)] hover:border-[var(--color-accent-bright)] hover:text-[var(--color-text)] transition-colors"
+								>
+									Live site
+								</a>
+							</div>
+						{/if}
 					</div>
-				</a>
+				</article>
 			{/each}
 		</div>
 	{/if}

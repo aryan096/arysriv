@@ -6,6 +6,7 @@ interface ProjectMeta {
 	date: string;
 	tags: string[];
 	published: boolean;
+	liveUrl?: string;
 }
 
 interface Project extends ProjectMeta {

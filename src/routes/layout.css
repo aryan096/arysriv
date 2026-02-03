@@ -61,6 +61,13 @@ a.card-link:hover {
 	text-shadow: none;
 }
 
+a.card-button,
+a.card-button:hover {
+	background-color: transparent;
+	text-decoration: none;
+	text-shadow: none;
+}
+
 ::selection {
 	background-color: var(--color-accent-bright);
 	color: var(--color-bg);

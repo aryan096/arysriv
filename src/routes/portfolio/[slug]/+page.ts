@@ -7,6 +7,7 @@ interface ProjectMeta {
 	date: string;
 	tags: string[];
 	published: boolean;
+	liveUrl?: string;
 }
 
 export const load: PageLoad = async ({ params }) => {
