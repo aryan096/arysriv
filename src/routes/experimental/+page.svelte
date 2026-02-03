@@ -24,7 +24,7 @@
 			{#each data.projects as project}
 				<a 
 					href="/experimental/{project.slug}" 
-					class="block p-5 bg-[var(--color-bg-secondary)] rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent-bright)] transition-colors group"
+					class="card-link block p-5 bg-[var(--color-bg-secondary)] rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent-bright)] transition-colors group"
 				>
 					<div class="flex flex-col gap-2">
 						<h2 class="text-lg font-medium group-hover:text-[var(--color-accent)] transition-colors">
