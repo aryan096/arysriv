@@ -10,6 +10,7 @@
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"check:docs": "node scripts/check-doc-instructions.mjs",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint ."
 	},
