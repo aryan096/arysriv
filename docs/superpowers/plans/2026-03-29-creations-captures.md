@@ -13,6 +13,7 @@
 ## File Map
 
 **Create:**
+
 - `src/content/creations/treevoxel.md`
 - `src/content/captures/` (directory, stays empty until user adds photos)
 - `static/captures/` (directory for future photo uploads)
@@ -26,14 +27,17 @@
 - `src/routes/captures/[slug]/+page.svelte`
 
 **Move:**
+
 - `src/content/portfolio/*.md` → `src/content/creations/`
 - `src/content/experimental/*.md` → `src/content/creations/`
 
 **Modify:**
+
 - `src/routes/+layout.svelte` — replace EXPERIMENTAL + PORTFOLIO nav with CREATIONS + CAPTURES
 - `src/lib/components/Sidebar.svelte` — update nav links
 
 **Delete:**
+
 - `src/routes/portfolio/` (entire directory)
 - `src/routes/experimental/` (entire directory)
 - `src/content/portfolio/` (now empty after move)
@@ -44,6 +48,7 @@
 ## Task 1: Reorganise content
 
 **Files:**
+
 - Move: `src/content/portfolio/*.md` → `src/content/creations/`
 - Move: `src/content/experimental/*.md` → `src/content/creations/`
 - Create: `src/content/creations/treevoxel.md`
@@ -65,10 +70,10 @@ Create `src/content/creations/treevoxel.md`:
 ---
 title: TreeVoxel
 description: A voxel-based tree generation tool.
-date: '2026-03-29'
+date: "2026-03-29"
 tags: []
 published: true
-liveUrl: 'https://treevoxel.arysriv.com'
+liveUrl: "https://treevoxel.arysriv.com"
 ---
 
 TreeVoxel is a tool for generating and exploring voxel trees. Visit the live site to explore it.
@@ -93,6 +98,7 @@ git commit -m "move content into creations dir, add treevoxel stub"
 ## Task 2: Create creations routes
 
 **Files:**
+
 - Create: `src/routes/creations/+page.ts`
 - Create: `src/routes/creations/+page.svelte`
 - Create: `src/routes/creations/[slug]/+page.ts`
@@ -103,36 +109,36 @@ git commit -m "move content into creations dir, add treevoxel stub"
 Create `src/routes/creations/+page.ts`:
 
 ```typescript
-import type { PageLoad } from './$types';
+import type { PageLoad } from "./$types";
 
 interface ProjectMeta {
-	title: string;
-	description: string;
-	date: string;
-	tags: string[];
-	published: boolean;
-	liveUrl?: string;
+  title: string;
+  description: string;
+  date: string;
+  tags: string[];
+  published: boolean;
+  liveUrl?: string;
 }
 
 interface Project extends ProjectMeta {
-	slug: string;
+  slug: string;
 }
 
 export const load: PageLoad = async () => {
-	const projectFiles = import.meta.glob<{ metadata: ProjectMeta }>(
-		'/src/content/creations/*.md',
-		{ eager: true }
-	);
+  const projectFiles = import.meta.glob<{ metadata: ProjectMeta }>(
+    "/src/content/creations/*.md",
+    { eager: true },
+  );
 
-	const projects: Project[] = Object.entries(projectFiles)
-		.map(([path, file]) => {
-			const slug = path.split('/').pop()?.replace('.md', '') ?? '';
-			return { ...file.metadata, slug };
-		})
-		.filter((project) => project.published)
-		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const projects: Project[] = Object.entries(projectFiles)
+    .map(([path, file]) => {
+      const slug = path.split("/").pop()?.replace(".md", "") ?? "";
+      return { ...file.metadata, slug };
+    })
+    .filter((project) => project.published)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-	return { projects };
+  return { projects };
 };
 ```
 
@@ -222,28 +228,30 @@ Create `src/routes/creations/+page.svelte`:
 Create `src/routes/creations/[slug]/+page.ts`:
 
 ```typescript
-import type { PageLoad } from './$types';
-import { error } from '@sveltejs/kit';
+import type { PageLoad } from "./$types";
+import { error } from "@sveltejs/kit";
 
 interface ProjectMeta {
-	title: string;
-	description: string;
-	date: string;
-	tags: string[];
-	published: boolean;
-	liveUrl?: string;
+  title: string;
+  description: string;
+  date: string;
+  tags: string[];
+  published: boolean;
+  liveUrl?: string;
 }
 
 export const load: PageLoad = async ({ params }) => {
-	try {
-		const project = await import(`../../../content/creations/${params.slug}.md`);
-		return {
-			content: project.default,
-			meta: project.metadata as ProjectMeta
-		};
-	} catch {
-		throw error(404, `Project not found: ${params.slug}`);
-	}
+  try {
+    const project = await import(
+      `../../../content/creations/${params.slug}.md`
+    );
+    return {
+      content: project.default,
+      meta: project.metadata as ProjectMeta,
+    };
+  } catch {
+    throw error(404, `Project not found: ${params.slug}`);
+  }
 };
 ```
 
@@ -322,6 +330,7 @@ git commit -m "add creations routes"
 ## Task 3: Create captures routes
 
 **Files:**
+
 - Create: `src/routes/captures/+page.ts`
 - Create: `src/routes/captures/+page.svelte`
 - Create: `src/routes/captures/[slug]/+page.ts`
@@ -332,36 +341,36 @@ git commit -m "add creations routes"
 Create `src/routes/captures/+page.ts`:
 
 ```typescript
-import type { PageLoad } from './$types';
+import type { PageLoad } from "./$types";
 
 interface CaptureMeta {
-	title: string;
-	description: string;
-	date: string;
-	tags: string[];
-	published: boolean;
-	imagePath: string;
+  title: string;
+  description: string;
+  date: string;
+  tags: string[];
+  published: boolean;
+  imagePath: string;
 }
 
 interface Capture extends CaptureMeta {
-	slug: string;
+  slug: string;
 }
 
 export const load: PageLoad = async () => {
-	const captureFiles = import.meta.glob<{ metadata: CaptureMeta }>(
-		'/src/content/captures/*.md',
-		{ eager: true }
-	);
+  const captureFiles = import.meta.glob<{ metadata: CaptureMeta }>(
+    "/src/content/captures/*.md",
+    { eager: true },
+  );
 
-	const captures: Capture[] = Object.entries(captureFiles)
-		.map(([path, file]) => {
-			const slug = path.split('/').pop()?.replace('.md', '') ?? '';
-			return { ...file.metadata, slug };
-		})
-		.filter((capture) => capture.published)
-		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const captures: Capture[] = Object.entries(captureFiles)
+    .map(([path, file]) => {
+      const slug = path.split("/").pop()?.replace(".md", "") ?? "";
+      return { ...file.metadata, slug };
+    })
+    .filter((capture) => capture.published)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-	return { captures };
+  return { captures };
 };
 ```
 
@@ -427,28 +436,28 @@ Create `src/routes/captures/+page.svelte`:
 Create `src/routes/captures/[slug]/+page.ts`:
 
 ```typescript
-import type { PageLoad } from './$types';
-import { error } from '@sveltejs/kit';
+import type { PageLoad } from "./$types";
+import { error } from "@sveltejs/kit";
 
 interface CaptureMeta {
-	title: string;
-	description: string;
-	date: string;
-	tags: string[];
-	published: boolean;
-	imagePath: string;
+  title: string;
+  description: string;
+  date: string;
+  tags: string[];
+  published: boolean;
+  imagePath: string;
 }
 
 export const load: PageLoad = async ({ params }) => {
-	try {
-		const capture = await import(`../../../content/captures/${params.slug}.md`);
-		return {
-			content: capture.default,
-			meta: capture.metadata as CaptureMeta
-		};
-	} catch {
-		throw error(404, `Capture not found: ${params.slug}`);
-	}
+  try {
+    const capture = await import(`../../../content/captures/${params.slug}.md`);
+    return {
+      content: capture.default,
+      meta: capture.metadata as CaptureMeta,
+    };
+  } catch {
+    throw error(404, `Capture not found: ${params.slug}`);
+  }
 };
 ```
 
@@ -535,6 +544,7 @@ git commit -m "add captures routes"
 ## Task 4: Update navigation
 
 **Files:**
+
 - Modify: `src/routes/+layout.svelte`
 - Modify: `src/lib/components/Sidebar.svelte`
 
@@ -544,10 +554,10 @@ In `src/routes/+layout.svelte`, replace the `navButtons` array (lines ~11-16):
 
 ```typescript
 const navButtons = [
-    { href: '/', label: 'HOME' },
-    { href: '/about', label: 'ABOUT' },
-    { href: '/creations', label: 'CREATIONS' },
-    { href: '/captures', label: 'CAPTURES' }
+  { href: "/", label: "HOME" },
+  { href: "/about", label: "ABOUT" },
+  { href: "/creations", label: "CREATIONS" },
+  { href: "/captures", label: "CAPTURES" },
 ];
 ```
 
@@ -597,6 +607,7 @@ git commit -m "update nav to creations and captures"
 ## Task 5: Remove old routes and content dirs
 
 **Files:**
+
 - Delete: `src/routes/portfolio/`
 - Delete: `src/routes/experimental/`
 - Delete: `src/content/portfolio/` (now empty)

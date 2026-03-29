@@ -10,6 +10,16 @@ interface CaptureMeta {
   imagePath: string;
 }
 
+const captureModules = import.meta.glob("/src/content/captures/*.md");
+
+export const prerender = Object.keys(captureModules).length > 0;
+
+export function entries() {
+  return Object.keys(captureModules).map((path) => ({
+    slug: path.split("/").pop()?.replace(".md", "") ?? "",
+  }));
+}
+
 export const load: PageLoad = async ({ params }) => {
   try {
     const capture = await import(`../../../content/captures/${params.slug}.md`);

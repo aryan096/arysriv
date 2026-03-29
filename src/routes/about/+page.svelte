@@ -1,5 +1,7 @@
 <script lang="ts">
 	// About + CV page
+
+	const resumeLink = { href: '/documents/resume.pdf' };
 </script>
 
 <svelte:head>
@@ -67,8 +69,8 @@
 	<div>
 		<h2 class="text-xl font-semibold mb-4">Documents</h2>
 		<div class="flex flex-wrap gap-4">
-			<a 
-				href="/documents/resume.pdf" 
+			<a
+				{...resumeLink}
 				class="inline-flex items-center gap-2 bg-[var(--color-bg-secondary)] px-4 py-2 rounded border border-[var(--color-border)] hover:border-[var(--color-accent-muted)] transition-colors"
 			>
 				<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">

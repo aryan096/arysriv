@@ -1,7 +1,12 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
+
+	function externalHref(href: string) {
+		return { href };
+	}
 </script>
 
 <svelte:head>
@@ -21,7 +26,7 @@
 		<p class="text-[var(--color-text-muted)]">No creations yet. Check back soon!</p>
 	{:else}
 		<div class="space-y-6">
-			{#each data.projects as project}
+			{#each data.projects as project (project.slug)}
 				<article class="p-5 bg-[var(--color-bg-secondary)] rounded-lg border border-[var(--color-border)] hover:border-[var(--color-accent-bright)] transition-colors group">
 					<div class="flex flex-col gap-2">
 						<h2 class="text-lg font-medium group-hover:text-[var(--color-accent)] transition-colors">
@@ -31,16 +36,18 @@
 							{project.description}
 						</p>
 						<div class="flex flex-wrap items-center gap-3 mt-2">
-							<span class="text-xs text-[var(--color-text-muted)]">
-								{new Date(project.date).toLocaleDateString('en-US', {
-									year: 'numeric',
-									month: 'long',
-									day: 'numeric'
-								})}
-							</span>
+							{#if project.date}
+								<span class="text-xs text-[var(--color-text-muted)]">
+									{new Date(project.date).toLocaleDateString('en-US', {
+										year: 'numeric',
+										month: 'long',
+										day: 'numeric'
+									})}
+								</span>
+							{/if}
 							{#if project.tags && project.tags.length > 0}
 								<div class="flex flex-wrap gap-2">
-									{#each project.tags as tag}
+									{#each project.tags as tag (tag)}
 										<span class="text-xs px-2 py-0.5 bg-[var(--color-bg)] rounded text-[var(--color-accent-muted)]">
 											{tag}
 										</span>
@@ -50,16 +57,16 @@
 						</div>
 						<div class="mt-3 flex flex-wrap gap-2">
 							<a
-								href="/creations/{project.slug}"
+								href={resolve(`/creations/${project.slug}`)}
 								class="card-button inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide border border-[var(--color-border)] rounded-md bg-[var(--color-bg)] text-[var(--color-accent-bright)] hover:border-[var(--color-accent-bright)] hover:text-[var(--color-text)] transition-colors"
 							>
 								Read more
 							</a>
 							{#if project.liveUrl}
 								<a
-									href={project.liveUrl}
+									{...externalHref(project.liveUrl)}
 									target="_blank"
-									rel="noopener noreferrer"
+									rel="external noopener noreferrer"
 									class="card-button inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide border border-[var(--color-border)] rounded-md bg-[var(--color-bg)] text-[var(--color-accent-bright)] hover:border-[var(--color-accent-bright)] hover:text-[var(--color-text)] transition-colors"
 								>
 									Live site

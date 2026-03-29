@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -19,9 +20,9 @@
 		<p class="text-[var(--color-text-muted)]">No captures yet. Check back soon!</p>
 	{:else}
 		<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-			{#each data.captures as capture}
+			{#each data.captures as capture (capture.slug)}
 				<a
-					href="/captures/{capture.slug}"
+					href={resolve(`/captures/${capture.slug}`)}
 					class="group block rounded-lg overflow-hidden border border-[var(--color-border)] hover:border-[var(--color-accent-bright)] transition-colors"
 				>
 					<div class="aspect-[4/3] overflow-hidden bg-[var(--color-bg-secondary)]">

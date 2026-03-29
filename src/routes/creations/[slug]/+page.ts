@@ -10,6 +10,14 @@ interface ProjectMeta {
   liveUrl?: string;
 }
 
+export function entries() {
+  return Object.keys(import.meta.glob("/src/content/creations/*.md")).map(
+    (path) => ({
+      slug: path.split("/").pop()?.replace(".md", "") ?? "",
+    }),
+  );
+}
+
 export const load: PageLoad = async ({ params }) => {
   try {
     const project = await import(

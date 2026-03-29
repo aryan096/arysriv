@@ -11,10 +11,12 @@ Merge the existing `/portfolio` and `/experimental` sections into a single `/cre
 ## 1. Route Changes
 
 ### Removed routes
+
 - `/src/routes/portfolio/` (listing + `[slug]` detail) — deleted
 - `/src/routes/experimental/` (listing + `[slug]` detail) — deleted
 
 ### New routes
+
 - `/src/routes/creations/+page.svelte` — listing page
 - `/src/routes/creations/+page.ts` — loader (reads `src/content/creations/*.md`)
 - `/src/routes/creations/[slug]/+page.svelte` — detail page
@@ -25,6 +27,7 @@ Merge the existing `/portfolio` and `/experimental` sections into a single `/cre
 - `/src/routes/captures/[slug]/+page.ts` — slug loader
 
 ### Navigation updates
+
 - `src/routes/+layout.svelte` navButtons: replace `EXPERIMENTAL` + `PORTFOLIO` with `CREATIONS` + `CAPTURES`
 - `src/lib/components/Sidebar.svelte`: update nav links to `/creations` and `/captures`
 
@@ -33,7 +36,9 @@ Merge the existing `/portfolio` and `/experimental` sections into a single `/cre
 ## 2. Content
 
 ### Creations content (`src/content/creations/`)
+
 Move all existing files here, no frontmatter changes:
+
 - `panchayat.md` (from `portfolio/`)
 - `pc51.md` (from `portfolio/`)
 - `thesis.md` (from `portfolio/`)
@@ -44,29 +49,31 @@ Move all existing files here, no frontmatter changes:
 Delete `src/content/portfolio/` and `src/content/experimental/` after moving.
 
 New stub file: `src/content/creations/treevoxel.md`
+
 ```yaml
 ---
 title: TreeVoxel
 description: A placeholder description — edit me.
-date: '2026-03-29'
+date: "2026-03-29"
 tags: []
 published: true
-liveUrl: 'https://treevoxel.arysriv.com'
+liveUrl: "https://treevoxel.arysriv.com"
 ---
 ```
 
 ### Captures content (`src/content/captures/`)
+
 Empty directory initially. Future files follow the existing frontmatter shape plus one new field:
 
 ```yaml
 ---
 title: string
 description: string
-date: 'YYYY-MM-DD'
+date: "YYYY-MM-DD"
 tags:
   - Tag1
 published: true | false
-imagePath: '/captures/filename.jpg'
+imagePath: "/captures/filename.jpg"
 ---
 ```
 
@@ -77,6 +84,7 @@ Images are stored in `static/captures/`.
 ## 3. Creations Page
 
 Identical behaviour to the current portfolio listing page:
+
 - Loads all `src/content/creations/*.md` files, filters `published: true`, sorts by date descending
 - Cards show: title, description, date, tags, "Read more" button, optional "Live site" button
 - Items are displayed flat — no visual distinction between former portfolio vs experimental entries
@@ -89,12 +97,14 @@ The `[slug]` detail page is identical to the current portfolio slug page, with b
 ## 4. Captures Page
 
 ### Listing (`/captures`)
+
 - Loads all `src/content/captures/*.md`, filters `published: true`, sorts by date descending
 - Displays a responsive photo grid: each card shows the photo thumbnail (`imagePath`), title, and date
 - Clicking a card navigates to `/captures/[slug]`
 - Empty state: "No captures yet. Check back soon!"
 
 ### Detail (`/captures/[slug]`)
+
 - Hero image full-width at top (from `imagePath` frontmatter), within the existing `content-wrapper` max-width
 - Title + date + tags header below the image
 - Markdown content beneath
@@ -105,6 +115,7 @@ The `[slug]` detail page is identical to the current portfolio slug page, with b
 ## 5. Validation
 
 Run before merging:
+
 - `npm run check`
 - `npm run lint`
 - `npm run build`

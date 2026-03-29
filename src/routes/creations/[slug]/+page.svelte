@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -11,7 +12,7 @@
 
 <article class="space-y-8">
 	<a
-		href="/creations"
+		href={resolve('/creations')}
 		class="inline-flex items-center gap-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors"
 	>
 		<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -32,7 +33,7 @@
 			</span>
 			{#if data.meta.tags && data.meta.tags.length > 0}
 				<div class="flex flex-wrap gap-2">
-					{#each data.meta.tags as tag}
+					{#each data.meta.tags as tag (tag)}
 						<span class="text-xs px-2 py-0.5 bg-[var(--color-bg-secondary)] rounded border border-[var(--color-border)] text-[var(--color-accent-muted)]">
 							{tag}
 						</span>

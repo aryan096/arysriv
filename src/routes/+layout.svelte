@@ -1,18 +1,21 @@
 <script lang="ts">
 	import './layout.css';
+	import { resolve } from '$app/paths';
 	import favicon from '$lib/assets/favicon.png';
 	import { page } from '$app/stores';
 
 	let { children } = $props();
+
+	type NavHref = '/' | '/about' | '/creations' | '/captures';
 	
 	// Check if we're on the home page
 	const isHomePage = $derived($page.url.pathname === '/');
 	
-	const navButtons = [
+	const navButtons: { href: NavHref; label: string }[] = [
 		{ href: '/', label: 'HOME' },
 		{ href: '/about', label: 'ABOUT' },
-		{ href: '/experimental', label: 'EXPERIMENTAL' },
-		{ href: '/portfolio', label: 'PORTFOLIO' }
+		{ href: '/creations', label: 'CREATIONS' },
+		{ href: '/captures', label: 'CAPTURES' }
 	];
 	
 	function isActive(href: string) {
@@ -33,9 +36,9 @@
 		<!-- Frame Navigation and Social Links -->
 		<div class="frame-header">
 			<div class="frame-nav">
-				{#each navButtons as button}
+				{#each navButtons as button (button.href)}
 					<a 
-						href={button.href}
+						href={resolve(button.href)}
 						class="frame-nav-button"
 						class:active={isActive(button.href)}
 					>

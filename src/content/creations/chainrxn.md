@@ -1,7 +1,7 @@
 ---
 title: Chain Rxn
 description: A functioning multiplayer game built in SvelteKit.
-date: '2026-02-03'
+date: "2026-02-03"
 tags:
   - Web Development
   - Game Design

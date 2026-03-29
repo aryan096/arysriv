@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
+
 	interface Props {
 		mobile?: boolean;
 	}
@@ -9,7 +11,7 @@
 {#if mobile}
 	<!-- Mobile footer layout -->
 	<div class="px-6 py-8 text-center">
-		<a href="/" class="block mb-2">
+		<a href={resolve('/')} class="block mb-2">
 			<h2 class="text-lg font-semibold text-[var(--color-text)]">Aryan Srivastava</h2>
 		</a>
 		<p class="text-sm text-[var(--color-text-muted)] mb-4">Data Scientist @ Development Data Lab</p>
@@ -32,25 +34,27 @@
 		
 		<!-- Navigation -->
 		<nav class="flex justify-center gap-6 text-sm">
-			<a href="/" class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)]">Home</a>
-			<a href="/about" class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)]">About</a>
-			<a href="/projects" class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)]">Projects</a>
+			<a href={resolve('/')} class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)]">Home</a>
+			<a href={resolve('/about')} class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)]">About</a>
+			<a href={resolve('/creations')} class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)]">Creations</a>
+			<a href={resolve('/captures')} class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)]">Captures</a>
 		</nav>
 	</div>
 {:else}
 	<!-- Desktop sidebar layout -->
 	<div class="flex flex-col h-full p-8">
 		<div class="flex-1">
-			<a href="/" class="block mb-1">
+			<a href={resolve('/')} class="block mb-1">
 				<h1 class="text-xl font-semibold text-[var(--color-text)]">Aryan Srivastava</h1>
 			</a>
 			<p class="text-sm text-[var(--color-text-muted)] mb-8">Data Scientist @ Development Data Lab</p>
 			
 			<!-- Navigation -->
 			<nav class="flex flex-col gap-3 mb-8">
-				<a href="/" class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors">Home</a>
-				<a href="/about" class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors">About</a>
-				<a href="/projects" class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors">Projects</a>
+				<a href={resolve('/')} class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors">Home</a>
+				<a href={resolve('/about')} class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors">About</a>
+				<a href={resolve('/creations')} class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors">Creations</a>
+				<a href={resolve('/captures')} class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors">Captures</a>
 			</nav>
 		</div>
 		

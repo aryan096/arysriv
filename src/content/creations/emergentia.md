@@ -1,7 +1,7 @@
 ---
 title: Emergentia
 description: A 2D grid world experiment exploring rule-based emergent behavior inspired by natural phenomena.
-date: '2026-03-28'
+date: "2026-03-28"
 tags:
   - Simulation
   - Emergence
