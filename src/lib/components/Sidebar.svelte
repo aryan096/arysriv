@@ -35,7 +35,6 @@
 		<!-- Navigation -->
 		<nav class="flex justify-center gap-6 text-sm">
 			<a href={resolve('/')} class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)]">Home</a>
-			<a href={resolve('/about')} class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)]">About</a>
 			<a href={resolve('/creations')} class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)]">Creations</a>
 			<a href={resolve('/captures')} class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)]">Captures</a>
 		</nav>
@@ -52,7 +51,6 @@
 			<!-- Navigation -->
 			<nav class="flex flex-col gap-3 mb-8">
 				<a href={resolve('/')} class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors">Home</a>
-				<a href={resolve('/about')} class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors">About</a>
 				<a href={resolve('/creations')} class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors">Creations</a>
 				<a href={resolve('/captures')} class="text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors">Captures</a>
 			</nav>
