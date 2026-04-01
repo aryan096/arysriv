@@ -30,12 +30,11 @@
 		</div>
 		
 		<div class="status-text">
-			<p>&gt; Data Scientist @ Development Data Lab</p>
-			<p>&gt; Building digital tools for social impact</p>
+			<p>&gt; making things that are fun and/or useful</p>
 		</div>
 		
 		<div class="terminal-header">
-			<span class="blink">█</span> IN TRANSIT
+			<span class="blink">█</span> TINKERING
 		</div>
 	</div>
 	

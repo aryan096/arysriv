@@ -13,7 +13,6 @@
 	
 	const navButtons: { href: NavHref; label: string }[] = [
 		{ href: '/', label: 'HOME' },
-		{ href: '/about', label: 'ABOUT' },
 		{ href: '/creations', label: 'CREATIONS' },
 		{ href: '/captures', label: 'CAPTURES' }
 	];
@@ -93,7 +92,7 @@
 <style>
 	.tv-container {
 		width: 100vw;
-		height: 100vh;
+		height: 100dvh;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -300,7 +299,7 @@
 	@media (max-width: 768px) {
 		.tv-frame {
 			width: 100vw;
-			height: 100vh;
+			height: 100dvh;
 			max-width: none;
 			max-height: none;
 			border-radius: 0;
