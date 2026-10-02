@@ -48,21 +48,22 @@
 					>Development Data Lab</a
 				>
 			</p>
-			<a
-				class="resume-button"
-				href={asset('/documents/resume.pdf')}
-				target="_blank"
-				rel="noopener noreferrer">Resume</a
-			>
 		</section>
 	</div>
+
+	<a
+		class="resume-button"
+		href={asset('/documents/resume.pdf')}
+		target="_blank"
+		rel="noopener noreferrer">Resume</a
+	>
 
 	<div class="status-bar">
 		<span>Bangalore</span>
 		<span class="separator" aria-hidden="true">|</span>
 		<span><time>{bangaloreTime}</time> IST</span>
 		<span class="separator" aria-hidden="true">|</span>
-		<span class="hint">Press 1 or 2 to change channel</span>
+		<span class="hint">Press 1, 2 or 3 to change channel</span>
 	</div>
 </div>
 
@@ -152,19 +153,22 @@
 
 	.role p {
 		margin: 0;
-		font-size: 1rem;
+		font-size: 0.75rem;
 		color: var(--color-text);
 	}
 
 	.resume-button {
+		position: absolute;
+		left: 1.5rem;
+		bottom: 1rem;
 		display: inline-block;
-		padding: 0.05rem 0.8rem 0.1rem;
+		padding: 0.05rem 0.65rem 0.1rem;
 		border: 2px solid var(--color-accent-bright);
 		background: var(--color-bg);
 		box-shadow: 3px 3px 0 var(--color-accent-muted);
 		font-family: var(--font-display);
-		font-size: 1.1rem;
-		letter-spacing: 1.5px;
+		font-size: 0.95rem;
+		letter-spacing: 1px;
 		text-transform: uppercase;
 		color: var(--color-accent-bright);
 		text-decoration: none;
@@ -248,7 +252,7 @@
 
 	@media (max-width: 768px) {
 		.home-screen {
-			padding: 1.5rem 1rem 3rem;
+			padding: 1.5rem 1rem 5.5rem;
 		}
 
 		.desktop-only {
@@ -269,6 +273,12 @@
 
 		.role {
 			margin-top: 2.25rem;
+		}
+
+		/* Sit above the wrapped status bar instead of beside it */
+		.resume-button {
+			left: 1rem;
+			bottom: 3rem;
 		}
 
 		.status-bar {

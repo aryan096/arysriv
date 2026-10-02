@@ -132,7 +132,7 @@
 		padding: 0.1rem 0.45rem;
 		border: 1px solid color-mix(in srgb, var(--color-accent-muted) 70%, transparent);
 		border-radius: 3px;
-		color: var(--color-accent);
+		color: color-mix(in srgb, var(--color-accent-bright) 50%, white);
 	}
 
 	.live-link {

@@ -24,13 +24,13 @@
 
 <svelte:head>
 	<title>Portfolio | Aryan Srivastava</title>
-	<meta name="description" content="Projects, research, and experiments by Aryan Srivastava" />
+	<meta name="description" content="A directory for some selected projects and their documentation" />
 </svelte:head>
 
 <div class="guide">
 	<header class="guide-header">
 		<h1>Portfolio</h1>
-		<p>Projects, research, and experiments.</p>
+		<p>A directory for some selected projects and their documentation</p>
 	</header>
 
 	{#if data.projects.length === 0}
@@ -222,7 +222,7 @@
 		padding: 0.1rem 0.45rem;
 		border: 1px solid color-mix(in srgb, var(--color-accent-muted) 70%, transparent);
 		border-radius: 3px;
-		color: var(--color-accent);
+		color: color-mix(in srgb, var(--color-accent-bright) 50%, white);
 	}
 
 	.live-link {

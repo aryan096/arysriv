@@ -8,14 +8,17 @@
 
 	let { children } = $props();
 
-	type NavHref = '/' | '/portfolio';
+	type NavHref = '/' | '/portfolio' | '/pong';
 
 	const channels: { href: NavHref; label: string }[] = [
 		{ href: '/', label: 'HOME' },
-		{ href: '/portfolio', label: 'PORTFOLIO' }
+		{ href: '/portfolio', label: 'PORTFOLIO' },
+		{ href: '/pong', label: 'PONG' }
 	];
 
 	const isHomePage = $derived($page.url.pathname === '/');
+	// Screens that own the whole tube instead of sitting in the scrolling content column
+	const isFullScreen = $derived(isHomePage || $page.url.pathname.startsWith('/pong'));
 
 	function isActive(href: string) {
 		if (href === '/') {
@@ -147,7 +150,7 @@
 			<div class="screen-power">
 				{#key $page.url.pathname}
 					<div class="tune-in" class:home={isHomePage}>
-						{#if isHomePage}
+						{#if isFullScreen}
 							{@render children()}
 						{:else}
 							<div class="tv-content">
@@ -161,7 +164,6 @@
 			</div>
 
 			<div class="grain" aria-hidden="true"></div>
-			<div class="roll-bar" aria-hidden="true"></div>
 			<div class="tracking" aria-hidden="true"></div>
 			<div class="scanlines" aria-hidden="true"></div>
 			<div class="glass" aria-hidden="true"></div>
@@ -524,7 +526,6 @@
 	}
 
 	.grain,
-	.roll-bar,
 	.tracking,
 	.scanlines,
 	.glass,
@@ -534,26 +535,14 @@
 		pointer-events: none;
 	}
 
+	/* Noise layers jitter by transform, not background-position, so they never repaint */
 	.grain {
 		z-index: 30;
+		inset: -211px 0 0 -97px;
 		background-image: var(--noise);
-		opacity: 0.045;
-		mix-blend-mode: screen;
-		animation: static-roll 0.12s steps(3) infinite;
-	}
-
-	/* Faint hum bar of brighter snow drifting down the tube */
-	.roll-bar {
-		z-index: 30;
-		inset: -30% 0 auto;
-		height: 30%;
-		background: var(--noise) rgba(212, 184, 255, 0.35);
-		mask-image: linear-gradient(transparent, #000 45% 55%, transparent);
-		opacity: 0.07;
-		mix-blend-mode: screen;
-		animation:
-			roll 9s linear infinite,
-			static-roll 0.1s steps(3) infinite;
+		opacity: 0.065;
+		will-change: transform;
+		animation: noise-shift 0.12s steps(3) infinite;
 	}
 
 	/* Thin tracking-error streaks that flick across now and then */
@@ -564,10 +553,7 @@
 		background-image: var(--noise);
 		background-size: 320px;
 		opacity: 0;
-		mix-blend-mode: screen;
-		animation:
-			tracking 7s steps(1) infinite,
-			static-roll 0.08s steps(3) infinite;
+		animation: tracking 7s steps(1) infinite;
 	}
 
 	.scanlines {
@@ -677,12 +663,12 @@
 		}
 	}
 
-	@keyframes roll {
+	@keyframes noise-shift {
 		0% {
-			transform: translateY(0);
+			transform: translate(0, 0);
 		}
 		100% {
-			transform: translateY(433%);
+			transform: translate(97px, 211px);
 		}
 	}
 
@@ -725,7 +711,6 @@
 		}
 
 		.static-burst,
-		.roll-bar,
 		.tracking {
 			display: none;
 		}
