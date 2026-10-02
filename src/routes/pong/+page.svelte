@@ -42,6 +42,16 @@
 		slide = Math.max(-1, Math.min(1, offset));
 	}
 
+	// A small dead zone lets a resting thumb hold still, full speed arrives before the track's
+	// edge so thumbs needn't reach it, and the mild curve keeps fine nudges near the center
+	const DEAD_ZONE = 0.08;
+	const FULL_AT = 0.75;
+
+	function sliderCurve(value: number) {
+		const t = Math.min(1, Math.max(0, (Math.abs(value) - DEAD_ZONE) / (FULL_AT - DEAD_ZONE)));
+		return Math.sign(value) * t ** 1.4;
+	}
+
 	function sliderDown(event: PointerEvent) {
 		if (event.pointerType === 'mouse' || activePointer !== null) return;
 		activePointer = event.pointerId;
@@ -190,8 +200,8 @@
 		}
 
 		function step(dt: number) {
-			const input = keys.left !== keys.right ? (keys.right ? 1 : -1) : slide;
-			const playerSpeed = Math.max(W * 0.9, 420);
+			const input = keys.left !== keys.right ? (keys.right ? 1 : -1) : sliderCurve(slide);
+			const playerSpeed = Math.max(W * 1.3, 560);
 
 			if (phase === 'over') return;
 			if (phase === 'ready') {
