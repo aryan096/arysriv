@@ -1,5 +1,21 @@
 <script lang="ts">
-	// Home page with icons and decorative elements
+	import { onMount } from 'svelte';
+	import { asset } from '$app/paths';
+
+	const clockFormat = new Intl.DateTimeFormat('en-GB', {
+		timeZone: 'Asia/Kolkata',
+		hour: '2-digit',
+		minute: '2-digit'
+	});
+
+	let bangaloreTime = $state('--:--');
+
+	onMount(() => {
+		const tick = () => (bangaloreTime = clockFormat.format(new Date()));
+		tick();
+		const interval = setInterval(tick, 10_000);
+		return () => clearInterval(interval);
+	});
 </script>
 
 <svelte:head>
@@ -8,43 +24,45 @@
 </svelte:head>
 
 <div class="home-screen">
-	<!-- Central content -->
 	<div class="home-content">
-		<!-- Desktop: single line -->
-		<div class="ascii-art desktop-only">
-			<pre>
-   ▄▀█ █▀█ █▄█ ▄▀█ █▄ █   █▀ █▀█ █ █ █ ▄▀█ █▀ ▀█▀ ▄▀█ █ █ ▄▀█
-   █▀█ █▀▄  █  █▀█ █ ▀█   ▄█ █▀▄ █ ▀▄▀ █▀█ ▄█  █  █▀█ ▀▄▀ █▀█
-			</pre>
-		</div>
-		<!-- Mobile: two lines -->
-		<div class="ascii-art mobile-only">
-			<pre>
-   ▄▀█ █▀█ █▄█ ▄▀█ █▄ █
-   █▀█ █▀▄  █  █▀█ █ ▀█
-			</pre>
-			<pre>
-   █▀ █▀█ █ █ █ ▄▀█ █▀ ▀█▀ ▄▀█ █ █ ▄▀█
-   ▄█ █▀▄ █ ▀▄▀ █▀█ ▄█  █  █▀█ ▀▄▀ █▀█
-			</pre>
-		</div>
-		
-		<div class="status-text">
-			<p>&gt; making things that are fun and/or useful</p>
-		</div>
-		
-		<div class="terminal-header">
-			<span class="blink">█</span> TINKERING
-		</div>
+		<h1 class="name">
+			<span class="sr-only">Aryan Srivastava</span>
+			<!-- Desktop: single line -->
+			<span class="ascii-art desktop-only" aria-hidden="true"><pre>
+▄▀█ █▀█ █▄█ ▄▀█ █▄ █   █▀ █▀█ █ █ █ ▄▀█ █▀ ▀█▀ ▄▀█ █ █ ▄▀█
+█▀█ █▀▄  █  █▀█ █ ▀█   ▄█ █▀▄ █ ▀▄▀ █▀█ ▄█  █  █▀█ ▀▄▀ █▀█</pre></span>
+			<!-- Mobile: two lines -->
+			<span class="ascii-art mobile-only" aria-hidden="true"><pre>
+▄▀█ █▀█ █▄█ ▄▀█ █▄ █
+█▀█ █▀▄  █  █▀█ █ ▀█</pre><pre>
+█▀ █▀█ █ █ █ ▄▀█ █▀ ▀█▀ ▄▀█ █ █ ▄▀█
+▄█ █▀▄ █ ▀▄▀ █▀█ ▄█  █  █▀█ ▀▄▀ █▀█</pre></span>
+		</h1>
+
+		<p class="tagline">&gt; making things that are fun and/or useful<span class="cursor" aria-hidden="true">█</span></p>
+
+		<section class="role">
+			<p>
+				Data Scientist @
+				<a href="https://devdatalab.org" target="_blank" rel="noopener noreferrer"
+					>Development Data Lab</a
+				>
+			</p>
+			<a
+				class="resume-button"
+				href={asset('/documents/resume.pdf')}
+				target="_blank"
+				rel="noopener noreferrer">Resume</a
+			>
+		</section>
 	</div>
-	
-	<!-- Status bar at bottom -->
+
 	<div class="status-bar">
-		<span>STATUS: ACTIVE</span>
-		<span class="separator">|</span>
-		<span>LOCATION: BANGALORE</span>
-		<span class="separator">|</span>
-		<span>READY</span>
+		<span>Bangalore</span>
+		<span class="separator" aria-hidden="true">|</span>
+		<span><time>{bangaloreTime}</time> IST</span>
+		<span class="separator" aria-hidden="true">|</span>
+		<span class="hint">Press 1 or 2 to change channel</span>
 	</div>
 </div>
 
@@ -53,36 +71,54 @@
 		width: 100%;
 		height: 100%;
 		position: relative;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		padding: 2rem;
 		z-index: 20;
-	}
-	
-	.home-content {
-		text-align: center;
-		max-width: 100%;
-		width: 100%;
-	}
-	
-	.terminal-header {
-		font-size: 14px;
-		color: var(--color-accent-bright);
-		text-shadow: 0 0 10px var(--color-accent-bright);
-		margin-top: 3rem;
-		letter-spacing: 2px;
-	}
-	
-	.ascii-art {
-		margin: 2rem 0;
-		filter: drop-shadow(0 0 4px var(--color-accent-bright));
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		padding: 2rem 2rem 3.5rem;
+		overflow-y: auto;
+	}
+
+	.home-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		width: 100%;
+		margin: auto 0;
+		text-align: center;
+	}
+
+	.name {
+		margin: 0;
+		text-shadow: none;
+	}
+
+	.ascii-art {
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+		color: var(--color-accent-bright);
+		filter: drop-shadow(0 0 4px var(--color-accent-bright));
+		cursor: default;
+	}
+
+	.ascii-art pre {
+		margin: 0;
+		font-family: var(--font-mono);
+		font-size: clamp(8px, 2.3vw, 20px);
+		font-weight: 400;
+		line-height: 1.2;
+		letter-spacing: 0;
+		transition: text-shadow 0.1s steps(2);
+	}
+
+	/* Chromatic split when the signal gets poked */
+	.name:hover pre {
+		text-shadow:
+			-2px 0 rgba(0, 212, 255, 0.75),
+			2px 0 rgba(255, 51, 51, 0.6);
+		animation: jitter 0.3s steps(3) 1;
 	}
 
 	.desktop-only {
@@ -92,27 +128,75 @@
 	.mobile-only {
 		display: none;
 	}
-	
-	.ascii-art pre {
-		font-size: clamp(8px, 2.5vw, 20px);
-		line-height: 1.2;
-		color: var(--color-accent-bright);
-		font-family: var(--font-mono);
-		margin: 0;
-		display: inline-block;
-	}
-	
-	.status-text {
-		margin-top: 2rem;
-		font-size: 16px;
-		line-height: 1.8;
-	}
-	
-	.status-text p {
-		margin: 0.5rem 0;
+
+	.tagline {
+		margin: 2.25rem 0 0;
+		font-size: 1rem;
 		color: var(--color-text);
 	}
-	
+
+	.cursor {
+		margin-left: 0.35em;
+		color: var(--color-accent-bright);
+		text-shadow: 0 0 10px var(--color-accent-bright);
+		animation: blink 1s steps(1) infinite;
+	}
+
+	.role {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1.25rem;
+		margin-top: 3rem;
+	}
+
+	.role p {
+		margin: 0;
+		font-size: 1rem;
+		color: var(--color-text);
+	}
+
+	.resume-button {
+		display: inline-block;
+		padding: 0.05rem 0.8rem 0.1rem;
+		border: 2px solid var(--color-accent-bright);
+		background: var(--color-bg);
+		box-shadow: 3px 3px 0 var(--color-accent-muted);
+		font-family: var(--font-display);
+		font-size: 1.1rem;
+		letter-spacing: 1.5px;
+		text-transform: uppercase;
+		color: var(--color-accent-bright);
+		text-decoration: none;
+		text-shadow: 0 0 6px var(--color-accent-bright);
+		transition:
+			transform 0.06s steps(1),
+			box-shadow 0.06s steps(1);
+	}
+
+	.resume-button::before {
+		content: '[ ';
+	}
+
+	.resume-button::after {
+		content: ' ]';
+	}
+
+	.resume-button:hover,
+	.resume-button:focus-visible {
+		background: var(--color-accent-bright);
+		color: var(--color-bg);
+		text-shadow: none;
+		box-shadow:
+			3px 3px 0 var(--color-accent-muted),
+			0 0 10px color-mix(in srgb, var(--color-accent-bright) 60%, transparent);
+	}
+
+	.resume-button:active {
+		transform: translate(3px, 3px);
+		box-shadow: 0 0 0 var(--color-accent-muted);
+	}
+
 	.status-bar {
 		position: absolute;
 		bottom: 1rem;
@@ -120,32 +204,51 @@
 		transform: translateX(-50%);
 		display: flex;
 		gap: 1rem;
+		white-space: nowrap;
 		font-size: 12px;
 		color: var(--color-text-muted);
 		text-shadow: 0 0 4px var(--color-text-muted);
 	}
-	
+
 	.separator {
 		color: var(--color-accent-muted);
 	}
-	
+
 	@keyframes blink {
-		0%, 50% { opacity: 1; }
-		51%, 100% { opacity: 0; }
+		50% {
+			opacity: 0;
+		}
 	}
-	
-	.blink {
-		animation: blink 1s infinite;
+
+	@keyframes jitter {
+		0% {
+			transform: translateX(-2px);
+		}
+		50% {
+			transform: translateX(2px);
+		}
+		100% {
+			transform: none;
+		}
 	}
-	
-	@keyframes float {
-		0%, 100% { transform: translateY(0); }
-		50% { transform: translateY(-10px); }
+
+	@media (prefers-reduced-motion: reduce) {
+		.cursor,
+		.name:hover pre {
+			animation: none;
+		}
 	}
-	
+
+	@media (hover: none) {
+		.hint,
+		.separator:has(+ .hint) {
+			display: none;
+		}
+	}
+
 	@media (max-width: 768px) {
 		.home-screen {
-			padding: 1rem;
+			padding: 1.5rem 1rem 3rem;
 		}
 
 		.desktop-only {
@@ -154,23 +257,27 @@
 
 		.mobile-only {
 			display: flex;
-			gap: 1rem;
 		}
-		
+
 		.ascii-art pre {
-			font-size: 12px;
+			font-size: clamp(7px, 2.9vw, 12px);
 		}
-		
-		.status-text {
-			font-size: 14px;
+
+		.tagline {
+			font-size: 0.85rem;
 		}
-		
+
+		.role {
+			margin-top: 2.25rem;
+		}
+
 		.status-bar {
+			width: calc(100% - 2rem);
 			font-size: 10px;
-			gap: 0.5rem;
+			gap: 0.25rem 0.5rem;
 			flex-wrap: wrap;
 			justify-content: center;
+			white-space: normal;
 		}
 	}
 </style>
-

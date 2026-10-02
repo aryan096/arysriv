@@ -1,7 +1,7 @@
 ---
 title: TreeVoxel
 description: A voxel-based tree generation tool.
-date: "2026-03-29"
+updated: "2026-03-29"
 tags: []
 published: true
 liveUrl: "https://treevoxel.arysriv.com"

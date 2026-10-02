@@ -1,0 +1,105 @@
+# Resume content. Edit this file, then run `npm run resume` (or just keep
+# `npm run dev` running — it rebuilds the PDF on save).
+#
+# Text fields (summary, details, bullets, notes, skills) are Typst markup:
+#   *bold*   _italic_   #link("https://example.com")[label]
+# Escape literal #, $, @, <, *, _ with a backslash.
+
+name:
+  first: Aryan
+  last: Srivastava
+
+# icon: one of the file names in resume/icons (without .svg)
+contact:
+  - icon: phone
+    text: (+91) 9565627888
+    url: tel:+919565627888
+  - icon: envelope
+    text: aryansrivastava096@gmail.com
+    url: mailto:aryansrivastava096@gmail.com
+  - icon: globe
+    text: www.arysriv.com
+    url: https://www.arysriv.com
+  - icon: github
+    text: aryan096
+    url: https://github.com/aryan096
+  - icon: linkedin
+    text: aryan096
+    url: https://www.linkedin.com/in/aryan096
+  - icon: x-twitter
+    text: ary_sriv
+    url: https://x.com/ary_sriv
+
+# Sections render in this order. Each has a `kind`:
+#   entries     — title / role / location / date, plus optional details and bullets
+#   skills      — label: value rows
+#   publications — title / authors / notes
+sections:
+  - title: Education
+    kind: entries
+    items:
+      - title: Brown University
+        role: B.S. with Honors, Computer Science
+        location: Providence, Rhode Island
+        date: Sept. 2018 - Dec. 2022
+        details:
+          - "*Relevant Experience and Coursework -* Undergraduate Teaching Assistant (CS Intro Courses), Cofounder - Brown RISD Innovation Community, Deep Learning, Computer Vision, Statistical Learning, Operating Systems, Creative Nonfiction, Honors Thesis"
+
+  - title: Experience
+    kind: entries
+    items:
+      - title: Development Data Lab
+        role: Data Scientist
+        location: Remote
+        date: June 2023 - Present
+        bullets:
+          - 'Led data platform and infrastructure design and development for the #link("https://cities.devdatalab.org")[Urban Growth Center], DDL''s research platform for comparable data on \~10,000 cities, with a focus on low- and middle-income countries — building end‑to‑end geospatial data pipelines in Postgres/PostGIS, and serving as sole owner and developer of the Svelte and TypeScript front end.'
+          - Designed a novel large language model based data extraction architecture to digitize historical Indian Population Census microdata, producing the first ever digitized version of the 1951 Census and extending the pipeline to the 1961 and 1971 Censuses.
+          - 'Designed and developed the interactive #link("https://devdatalab.github.io/nobel-prizes-digipub/")[digital publication] for DDL''s research on access to opportunity among Nobel laureates, built as a reusable template for transparent, data-driven research communication across future DDL projects.'
+          - Maintained and developed key organizational systems and products — including SHRUG — as part of the core data team.
+
+      - title: Sloman Lab (Cognitive Science) and Brown AI Lab (Computer Science), Brown University
+        role: Joint Research Assistantship
+        location: Providence, Rhode Island
+        date: Jan. 2021 - Oct. 2021
+        bullets:
+          - Built and managed a 300M+ word news and social media corpus on cluster computing for CogSci 2021 research.
+          - Developed novel transformer classifiers for clause-level linguistic features, analyzing trends with Loess regression.
+
+      - title: Center for Contemporary South Asia and Department of Economics, Brown University
+        role: Undergraduate Research Assistant
+        location: Providence, Rhode Island
+        date: Mar. 2021 - May 2023
+        bullets:
+          - Built the cleanest dataset yet of geolocated villages and Panchayat candidates in Uttar Pradesh via web scraping.
+          - Trained multilingual transformers to detect hate speech on Indian social media, powering prize-winning research.
+
+      - title: WXY Studio
+        role: Data Science and Planning Intern
+        location: New York City
+        date: June 2022 - Aug. 2022
+        bullets:
+          - Designed new scoring methods and a faster regression model to guide school rezoning in Hillsborough County, FL.
+          - Built an internal NLP web tool to accelerate analysis of large-scale engagement surveys for planning decisions.
+
+  - title: Writing
+    kind: publications
+    items:
+      - title: "Anecdotes Ushered in Marijuana Legalization: A Machine Learning-aided Big Data Analysis of Reddit Discourse (2008-2019)"
+        authors: Babak Hemmatian, Aryan Srivastava, Nathaniel Goodman, Jonathan Lee, Carsten Eickhoff, Steven A. Sloman
+        notes:
+          - "Conference Paper: 2021 Virtual Scientific Meeting of the Research Society on Marijuana"
+          - "Conference Poster: 43rd Annual Meeting of the Cognitive Science Society"
+
+      - title: "Hate at Scale: Elections, Leader Identity and Hate Speech in Rural Uttar Pradesh"
+        authors: Aryan Srivastava, Aarushi Kalra
+        notes:
+          - Brown University Center for Contemporary South Asia Undergraduate Paper Prize
+
+      - title: Rethinking Low-Level Affordances of Social Media Platforms — The Role of Dislikes in Influencing Credibility Judgments of Political Content on YouTube
+        authors: Aryan Srivastava, Chen Sun, Steven A. Sloman
+        notes:
+          - Honors Thesis in Computer Science
+
+      - title: A Dataset of Geolocated Villages and Gram Panchayat Election Candidates in Uttar Pradesh
+        authors: Aryan Srivastava, Aarushi Kalra, Saket Tiwari

@@ -9,3 +9,5 @@ build
 AGENTS.md
 CLAUDE.md
 check-doc-instructions.mjs
+# generated from resume/ by typst
+static/documents/resume.pdf

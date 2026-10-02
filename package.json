@@ -7,6 +7,8 @@
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
+    "resume": "typst compile --ignore-system-fonts --font-path resume/fonts resume/resume.typ static/documents/resume.pdf",
+    "resume:watch": "typst watch --ignore-system-fonts --font-path resume/fonts resume/resume.typ static/documents/resume.pdf",
     "prepare": "svelte-kit sync || echo ''",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",

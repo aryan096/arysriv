@@ -1,8 +1,9 @@
 @import "tailwindcss";
 @plugin '@tailwindcss/typography';
 
-@theme {
+@theme static {
   --font-mono: "JetBrains Mono", monospace;
+  --font-display: "VT323", "JetBrains Mono", monospace;
   --color-bg: #0a0a0e;
   --color-bg-secondary: #0f0f14;
   --color-text: #b8a0d9;
@@ -57,18 +58,10 @@ a:hover {
   text-shadow: 0 0 2px var(--color-accent-bright);
 }
 
-a.card-link,
-a.card-link:hover {
-  background-color: transparent;
-  text-decoration: none;
-  text-shadow: none;
-}
-
-a.card-button,
-a.card-button:hover {
-  background-color: transparent;
-  text-decoration: none;
-  text-shadow: none;
+:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 ::selection {
@@ -76,17 +69,6 @@ a.card-button:hover {
   color: var(--color-bg);
 }
 
-/* Prose styling for markdown content */
-.prose {
-  --tw-prose-body: var(--color-text);
-  --tw-prose-headings: var(--color-accent-bright);
-  --tw-prose-links: var(--color-accent-bright);
-  --tw-prose-bold: var(--color-accent-bright);
-  --tw-prose-code: var(--color-accent-bright);
-  --tw-prose-quotes: var(--color-text-muted);
-}
-
-/* Pixelated text effect */
 h1,
 h2,
 h3,
@@ -97,77 +79,53 @@ h6 {
   letter-spacing: 0.5px;
 }
 
-/* Retro TV effects */
-@keyframes flicker {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.98;
-  }
+/* Prose styling for markdown content */
+.prose {
+  --tw-prose-body: var(--color-text);
+  --tw-prose-headings: var(--color-accent-bright);
+  --tw-prose-links: var(--color-accent-bright);
+  --tw-prose-bold: var(--color-accent-bright);
+  --tw-prose-code: var(--color-accent-bright);
+  --tw-prose-quotes: var(--color-text-muted);
+  --tw-prose-bullets: var(--color-accent-muted);
+  --tw-prose-counters: var(--color-accent-muted);
+  --tw-prose-hr: color-mix(in srgb, var(--color-accent-muted) 50%, transparent);
+  --tw-prose-pre-bg: var(--color-bg-secondary);
+  line-height: 1.8;
 }
 
-@keyframes crt-flicker {
-  0% {
-    opacity: 0.98;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.98;
-  }
+.prose :where(h2, h3) {
+  font-weight: 600;
 }
 
-.tv-glow {
-  text-shadow:
-    0 0 10px currentColor,
-    0 0 20px currentColor,
-    0 0 30px currentColor;
+.prose :where(h2)::before {
+  content: "## ";
+  color: var(--color-accent-muted);
+  text-shadow: none;
 }
 
-/* Scanline animation */
-@keyframes scanline {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(100%);
-  }
+.prose :where(h3)::before {
+  content: "### ";
+  color: var(--color-accent-muted);
+  text-shadow: none;
 }
 
-/* Optional: Add subtle noise texture */
-@keyframes noise {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  10% {
-    transform: translate(-5%, -5%);
-  }
-  20% {
-    transform: translate(-10%, 5%);
-  }
-  30% {
-    transform: translate(5%, -10%);
-  }
-  40% {
-    transform: translate(-5%, 15%);
-  }
-  50% {
-    transform: translate(-10%, 5%);
-  }
-  60% {
-    transform: translate(15%, 0);
-  }
-  70% {
-    transform: translate(0, 10%);
-  }
-  80% {
-    transform: translate(-15%, 0);
-  }
-  90% {
-    transform: translate(10%, 5%);
-  }
+.prose :where(code):not(:where(pre *)) {
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--color-accent-muted) 25%, transparent);
+}
+
+.prose :where(code):not(:where(pre *))::before,
+.prose :where(code):not(:where(pre *))::after {
+  content: none;
+}
+
+.prose :where(pre) {
+  border: 1px solid color-mix(in srgb, var(--color-accent-muted) 60%, transparent);
+}
+
+.prose :where(img) {
+  border-radius: 6px;
+  border: 1px solid color-mix(in srgb, var(--color-accent-muted) 60%, transparent);
 }
