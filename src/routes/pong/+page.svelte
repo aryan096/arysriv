@@ -146,7 +146,8 @@
 			W = nextW;
 			H = nextH;
 			block = Math.max(6, Math.round(Math.min(W, H) / 55));
-			paddleW = Math.max(block * 6, Math.round(W * 0.14));
+			// Narrow (phone) courts get proportionally wider paddles so thumb control stays forgiving
+			paddleW = Math.max(block * 6, Math.round(W * (W < 600 ? 0.2 : 0.14)));
 
 			layer.width = canvas.width;
 			layer.height = canvas.height;
