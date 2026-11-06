@@ -1,6 +1,6 @@
 ---
 title: Census District Handbook Archive
-description: A searchable online archive of Indian Census District Census Handbooks, built at Development Data Lab.
+description: An online archival and digitization project for Indian Census District Census Handbooks from 1951-2011.
 updated: "2026-11-06"
 tags:
   - Data Platform
