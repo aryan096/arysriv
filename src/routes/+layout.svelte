@@ -27,7 +27,7 @@
 		return $page.url.pathname.startsWith(href);
 	}
 
-	// Channel number for the current page; pages without a button (e.g. /about) read as AV input
+	// Channel number for the current page; pages without a button (e.g. unknown routes) read as AV input
 	const channelIndex = $derived(channels.findIndex((c) => isActive(c.href)));
 	const osdChannel = $derived(channelIndex === -1 ? 'AV' : `CH ${String(channelIndex + 1).padStart(2, '0')}`);
 	const osdLabel = $derived(channelIndex === -1 ? 'INPUT' : channels[channelIndex].label);
