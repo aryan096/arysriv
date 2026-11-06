@@ -8,7 +8,6 @@ tags:
   - Web Development
   - Svelte
 published: true
-pinned: true
 liveUrl: https://cities.devdatalab.org
 ---
 
