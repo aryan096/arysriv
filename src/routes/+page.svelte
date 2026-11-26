@@ -20,7 +20,15 @@
 
 <svelte:head>
 	<title>Aryan Srivastava</title>
-	<meta name="description" content="Personal website of Aryan Srivastava" />
+	<meta
+		name="description"
+		content="Aryan Srivastava is a data scientist at Development Data Lab, building public data infrastructure and tools for development research in India and beyond."
+	/>
+	<meta property="og:title" content="Aryan Srivastava" />
+	<meta
+		property="og:description"
+		content="Data scientist at Development Data Lab, building public data infrastructure and tools for development research in India and beyond."
+	/>
 </svelte:head>
 
 <div class="home-screen">

@@ -8,6 +8,7 @@ tags:
   - Research Communication
 published: true
 liveUrl: https://devdatalab.github.io/nobel-prizes-digipub/
+order: 4
 ---
 
 ## Overview

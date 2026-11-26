@@ -25,6 +25,8 @@
 <svelte:head>
 	<title>Portfolio | Aryan Srivastava</title>
 	<meta name="description" content="A directory for some selected projects and their documentation" />
+	<meta property="og:title" content="Portfolio | Aryan Srivastava" />
+	<meta property="og:description" content="A directory for some selected projects and their documentation" />
 </svelte:head>
 
 <div class="guide">

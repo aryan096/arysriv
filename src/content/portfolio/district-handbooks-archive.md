@@ -8,6 +8,7 @@ tags:
   - Web Development
 published: true
 liveUrl: https://census.devdatalab.org/district-handbooks-archive/
+order: 3
 ---
 
 <script>
@@ -16,7 +17,9 @@ liveUrl: https://census.devdatalab.org/district-handbooks-archive/
 
 ## Overview
 
-The [Census District Handbook Archive](https://census.devdatalab.org/district-handbooks-archive/) is an online archive of Census District Handbooks, published by Development Data Lab.
+The [Census District Handbook Archive](https://census.devdatalab.org/district-handbooks-archive/) is an online archive of India's District Census Handbooks from 1951–2011, published by Development Data Lab. It holds 2 million pages.
+
+The archive grew out of my work [digitizing the 1951 Census](/portfolio/pc51), where we built an LLM-based pipeline to extract data from 50,000 pages of historical census tables.
 
 ## Launch
 

@@ -93,6 +93,12 @@
 <svelte:head>
 	<link rel="icon" href={favicon} />
 	<title>Aryan Srivastava</title>
+	<link rel="canonical" href={`https://www.arysriv.com${$page.url.pathname}`} />
+	<meta property="og:site_name" content="Aryan Srivastava" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content={`https://www.arysriv.com${$page.url.pathname}`} />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@ary_sriv" />
 </svelte:head>
 
 <svelte:window onkeydown={handleKeydown} />
@@ -137,7 +143,7 @@
 						<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
 					</svg>
 				</a>
-				<a href="mailto:srivastava@devdatalab.org" class="social-button" title="Email" aria-label="Email">
+				<a href="mailto:aryansrivastava096@gmail.com" class="social-button" title="Email" aria-label="Email">
 					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="social-icon" aria-hidden="true">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
 					</svg>

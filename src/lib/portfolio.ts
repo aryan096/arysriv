@@ -7,6 +7,8 @@ export interface ProjectMeta {
 	published: boolean;
 	/** Pinned projects sort above the rest, regardless of date */
 	pinned?: boolean;
+	/** Manual rank within the list (lower = higher up); unranked projects fall back to date */
+	order?: number;
 	liveUrl?: string;
 }
 
@@ -36,6 +38,7 @@ export function getProjects(): Project[] {
 		.sort(
 			(a, b) =>
 				Number(!!b.pinned) - Number(!!a.pinned) ||
+				(a.order ?? Number.POSITIVE_INFINITY) - (b.order ?? Number.POSITIVE_INFINITY) ||
 				getDateValue(b.updated) - getDateValue(a.updated)
 		);
 }

@@ -15,6 +15,8 @@
 <svelte:head>
 	<title>{data.meta.title} | Aryan Srivastava</title>
 	<meta name="description" content={data.meta.description} />
+	<meta property="og:title" content={`${data.meta.title} | Aryan Srivastava`} />
+	<meta property="og:description" content={data.meta.description} />
 </svelte:head>
 
 <article>
