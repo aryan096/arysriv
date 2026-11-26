@@ -53,14 +53,12 @@
 
 		<p class="tagline">&gt; making things that are fun and/or useful<span class="cursor" aria-hidden="true">█</span></p>
 
-		<section class="role">
-			<p>
-				Data Scientist @
-				<a href="https://devdatalab.org" target="_blank" rel="noopener noreferrer"
-					>Development Data Lab</a
-				>
-			</p>
-		</section>
+		<p class="tagline role">
+			&gt; Data Scientist @
+			<a href="https://devdatalab.org" target="_blank" rel="noopener noreferrer"
+				>Development Data Lab</a
+			>
+		</p>
 
 		<a
 			class="resume-button"
@@ -179,18 +177,8 @@
 		animation: blink 1s steps(1) infinite;
 	}
 
-	.role {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 1.25rem;
-		margin-top: 1.5rem;
-	}
-
-	.role p {
-		margin: 0;
-		font-size: 1rem;
-		color: var(--color-text);
+	.tagline.role {
+		margin-top: 0.75rem;
 	}
 
 	.resume-button {
@@ -317,14 +305,15 @@
 			padding: 2.25rem 2rem 4.5rem;
 		}
 
+		/* Center vertically; auto margins (not justify-content) so tall content still scrolls from the top */
 		.home-main {
+			margin-block: auto;
 			grid-template-columns: 1fr;
 			justify-items: center;
 			gap: 2rem;
 		}
 
-		.home-content,
-		.role {
+		.home-content {
 			align-items: center;
 			text-align: center;
 		}
@@ -355,8 +344,8 @@
 			text-wrap: balance;
 		}
 
-		.role {
-			margin-top: 1.25rem;
+		.tagline.role {
+			margin-top: 0.5rem;
 		}
 
 		.role a {

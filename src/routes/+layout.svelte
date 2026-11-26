@@ -156,17 +156,20 @@
 <div class="tv-container">
 	<div class="tv-frame" class:standby={!powered}>
 		<div class="frame-top">
-			<button
-				type="button"
-				class="power"
-				class:off={!powered}
-				aria-pressed={powered}
-				aria-label={powered ? 'Turn the TV off' : 'Turn the TV on'}
-				onclick={togglePower}
-			>
-				<i aria-hidden="true"></i>
-				<span class="label" aria-hidden="true">POWER</span>
-			</button>
+			<nav class="buttons" aria-label="Channels">
+				{#each channels as channel, i (channel.href)}
+					<a
+						href={resolve(channel.href)}
+						class="panel-button"
+						class:active={isActive(channel.href)}
+						aria-current={isActive(channel.href) ? 'page' : undefined}
+						aria-keyshortcuts={String(i + 1)}
+					>
+						<span class="cap lamp" aria-hidden="true"></span>
+						<span class="label"><span aria-hidden="true">{i + 1}&nbsp;</span>{channel.label}</span>
+					</a>
+				{/each}
+			</nav>
 			<span class="tally" class:live={tallyLive} aria-hidden="true">
 				<i></i>
 			</span>
@@ -212,21 +215,17 @@
 		</div>
 
 		<footer class="panel">
-			<div class="group">
-				<nav class="buttons" aria-label="Channels">
-					{#each channels as channel, i (channel.href)}
-						<a
-							href={resolve(channel.href)}
-							class="panel-button"
-							class:active={isActive(channel.href)}
-							aria-current={isActive(channel.href) ? 'page' : undefined}
-							aria-keyshortcuts={String(i + 1)}
-						>
-							<span class="cap lamp" aria-hidden="true"></span>
-							<span class="label"><span aria-hidden="true">{i + 1}&nbsp;</span>{channel.label}</span>
-						</a>
-					{/each}
-				</nav>
+			<div class="group power-group">
+				<button
+					type="button"
+					class="power"
+					class:off={!powered}
+					aria-pressed={powered}
+					aria-label={powered ? 'Turn the TV off' : 'Turn the TV on'}
+					onclick={togglePower}
+				>
+					<i aria-hidden="true"></i>
+				</button>
 			</div>
 
 			<div class="group">
@@ -310,23 +309,6 @@
 		font-family: var(--f-panel);
 	}
 
-	/* Power sits top-left: key and label side by side to keep the strip slim */
-	.frame-top .power {
-		grid-auto-flow: column;
-		align-items: center;
-		gap: 8px;
-	}
-
-	.frame-top .power i {
-		width: 24px;
-		height: 20px;
-		box-shadow: 0 2px 0 var(--case-edge);
-	}
-
-	.frame-top .power:active i {
-		transform: translateY(1px);
-	}
-
 	.tally {
 		display: flex;
 		align-items: center;
@@ -385,6 +367,11 @@
 	.buttons {
 		display: flex;
 		gap: 10px;
+	}
+
+	/* Label-less key: center it in the strip instead of sitting on the baseline */
+	.power-group {
+		align-self: center;
 	}
 
 	.panel-button {
@@ -780,6 +767,11 @@
 
 		.frame-top {
 			padding-bottom: 8px;
+		}
+
+		/* No power switch on phones */
+		.power-group {
+			display: none;
 		}
 
 
