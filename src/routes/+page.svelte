@@ -54,11 +54,13 @@
 		<p class="tagline">&gt; making things that are fun and/or useful<span class="cursor" aria-hidden="true">█</span></p>
 
 		<p class="tagline role">
-			&gt; Data Scientist @
+			&gt; data scientist @
 			<a href="https://devdatalab.org" target="_blank" rel="noopener noreferrer"
 				>Development Data Lab</a
 			>
 		</p>
+
+		<p class="tagline role">&gt; favorite chess opening: the French Defense</p>
 
 		<a
 			class="resume-button"
