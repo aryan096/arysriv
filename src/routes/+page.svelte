@@ -8,6 +8,9 @@
 		minute: '2-digit'
 	});
 
+	// Portrait is hidden for now; flip to true to bring it back.
+	const showPortrait = false;
+
 	let bangaloreTime = $state('--:--');
 
 	onMount(() => {
@@ -67,6 +70,7 @@
 		>
 	</div>
 
+	{#if showPortrait}
 	<figure class="portrait">
 		<div class="portrait-frame">
 			<img
@@ -79,6 +83,7 @@
 			/>
 		</div>
 	</figure>
+	{/if}
 	</div>
 
 
@@ -138,7 +143,7 @@
 	.ascii-art pre {
 		margin: 0;
 		font-family: var(--font-mono);
-		font-size: clamp(7px, 1.5vw, 14px);
+		font-size: clamp(8px, 1.9vw, 19px);
 		font-weight: 400;
 		line-height: 1.2;
 		letter-spacing: 0;
@@ -162,8 +167,8 @@
 	}
 
 	.tagline {
-		margin: 1.75rem 0 0;
-		font-size: 1rem;
+		margin: 2rem 0 0;
+		font-size: 1.3rem;
 		color: var(--color-text);
 	}
 
@@ -179,24 +184,24 @@
 		flex-direction: column;
 		align-items: flex-start;
 		gap: 1.25rem;
-		margin-top: 1.25rem;
+		margin-top: 1.5rem;
 	}
 
 	.role p {
 		margin: 0;
-		font-size: 0.75rem;
+		font-size: 1rem;
 		color: var(--color-text);
 	}
 
 	.resume-button {
-		margin-top: 1.75rem;
+		margin-top: 2.25rem;
 		display: inline-block;
-		padding: 0.05rem 0.65rem 0.1rem;
+		padding: 0.1rem 0.8rem 0.15rem;
 		border: 2px solid var(--color-accent-bright);
 		background: var(--color-bg);
 		box-shadow: 3px 3px 0 var(--color-accent-muted);
 		font-family: var(--font-display);
-		font-size: 0.95rem;
+		font-size: 1.25rem;
 		letter-spacing: 1px;
 		text-transform: uppercase;
 		color: var(--color-accent-bright);
@@ -346,12 +351,16 @@
 		}
 
 		.tagline {
-			font-size: 0.85rem;
+			font-size: 1rem;
 			text-wrap: balance;
 		}
 
 		.role {
-			margin-top: 1rem;
+			margin-top: 1.25rem;
+		}
+
+		.role a {
+			white-space: nowrap;
 		}
 
 		.status-bar {
