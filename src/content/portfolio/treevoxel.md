@@ -7,7 +7,7 @@ tags:
   - Procedural Generation
 published: true
 liveUrl: "https://treevoxel.arysriv.com"
-order: 8
+order: 6
 ---
 
 TreeVoxel is a tool for generating and exploring voxel trees. Visit the live site to explore it.

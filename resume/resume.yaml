@@ -62,7 +62,7 @@ sections:
         date: Mar. 2021 - May 2023
         bullets:
           - Scraped and geolocated a public dataset of Uttar Pradesh villages and Panchayat candidates (4,500+ downloads).
-          - Trained multilingual transformers to detect hate speech on Indian social media.
+          - 'Trained multilingual transformers to detect #link("https://www.arysriv.com/documents/hate-at-scale.pdf")[hate speech on Indian social media].'
 
       - title: WXY Studio
         role: Data Science and Planning Intern
@@ -88,8 +88,8 @@ sections:
           - "Conference Paper: 2021 Virtual Scientific Meeting of the Research Society on Marijuana"
           - "Conference Poster: 43rd Annual Meeting of the Cognitive Science Society"
 
-      - title: "Hate at Scale: Elections, Leader Identity and Hate Speech in Rural Uttar Pradesh"
-        authors: Aryan Srivastava, Aarushi Kalra
+      - title: '#link("https://www.arysriv.com/documents/hate-at-scale.pdf")[Hate at Scale: Elections, Leader Identity and Hate Speech in Rural Uttar Pradesh]'
+        authors: Aarushi Kalra, Saket Tiwari, Aryan Srivastava
         notes:
           - Brown University Center for Contemporary South Asia Undergraduate Paper Prize
 

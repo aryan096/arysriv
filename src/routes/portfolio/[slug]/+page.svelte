@@ -99,7 +99,7 @@
 		color: var(--color-accent-bright);
 		text-shadow:
 			0 0 12px color-mix(in srgb, var(--color-accent-bright) 55%, transparent),
-			3px 3px 0 #2c2045;
+			3px 3px 0 #2a2721;
 		text-wrap: balance;
 	}
 

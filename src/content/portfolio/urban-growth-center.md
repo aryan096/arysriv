@@ -29,4 +29,3 @@ I'm a member of DDL's team in the [OpenAI Economic Research Exchange](https://op
 - Comparable city-level data for ~10,000 cities
 - End-to-end geospatial pipelines in Postgres/PostGIS
 - Svelte and TypeScript front end, built and maintained solo
-- Basis for DDL's OpenAI Economic Research Exchange project on AI adoption and labor markets

@@ -21,4 +21,4 @@ I scraped candidate and election records from the Uttar Pradesh State Election C
 ## Outputs
 
 - [_A Dataset of Geolocated Villages and Gram Panchayat Election Candidates in Uttar Pradesh_](https://osf.io/preprints/socarxiv/d6w2h_v1) (with Aarushi Kalra and Saket Tiwari), a SocArXiv preprint and public dataset with 4,500+ downloads
-- Related paper: _Hate at Scale: Elections, Leader Identity and Hate Speech in Rural Uttar Pradesh_ (with Aarushi Kalra), winner of the Brown University Center for Contemporary South Asia Undergraduate Paper Prize
+- Related paper: [_Hate at Scale: Elections, Leader Identity and Hate Speech in Rural Uttar Pradesh_](/documents/hate-at-scale.pdf) (with Aarushi Kalra and Saket Tiwari), winner of the Brown University Center for Contemporary South Asia Undergraduate Paper Prize

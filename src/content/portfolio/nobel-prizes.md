@@ -13,7 +13,7 @@ order: 4
 
 ## Overview
 
-The [Nobel Prizes digital publication](https://devdatalab.github.io/nobel-prizes-digipub/) presents Development Data Lab's research on access to opportunity among Nobel laureates as an interactive, web-based publication.
+The [Nobel Prizes digital publication](https://devdatalab.github.io/nobel-prizes-digipub/) presents Development Data Lab's research on access to opportunity among Nobel laureates as an interactive, web-based publication. The project was supported by the [Cosmos Institute](https://cosmos-institute.org/).
 
 ## What I Did
 

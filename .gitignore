@@ -11,3 +11,6 @@ CLAUDE.md
 check-doc-instructions.mjs
 # generated from resume/ by typst
 static/documents/resume.pdf
+
+# Playwright MCP screenshots and logs
+.playwright-mcp

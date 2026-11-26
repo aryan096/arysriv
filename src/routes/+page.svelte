@@ -32,6 +32,7 @@
 </svelte:head>
 
 <div class="home-screen">
+	<div class="home-main">
 	<div class="home-content">
 		<h1 class="name">
 			<span class="sr-only">Aryan Srivastava</span>
@@ -57,14 +58,29 @@
 				>
 			</p>
 		</section>
+
+		<a
+			class="resume-button"
+			href={asset('/documents/resume.pdf')}
+			target="_blank"
+			rel="noopener noreferrer">Resume</a
+		>
 	</div>
 
-	<a
-		class="resume-button"
-		href={asset('/documents/resume.pdf')}
-		target="_blank"
-		rel="noopener noreferrer">Resume</a
-	>
+	<figure class="portrait">
+		<div class="portrait-frame">
+			<img
+				src={asset('/images/portrait.webp')}
+				alt="Portrait of Aryan Srivastava"
+				width="640"
+				height="800"
+				loading="eager"
+				decoding="async"
+			/>
+		</div>
+	</figure>
+	</div>
+
 
 	<div class="status-bar">
 		<span>Bangalore</span>
@@ -83,19 +99,26 @@
 		z-index: 20;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		padding: 2rem 2rem 3.5rem;
+		align-items: stretch;
+		justify-content: flex-start;
+		padding: 3.5rem 5.5rem 4rem;
 		overflow-y: auto;
+	}
+
+	.home-main {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		align-items: start;
+		gap: 2.5rem;
+		width: 100%;
 	}
 
 	.home-content {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: flex-start;
 		width: 100%;
-		margin: auto 0;
-		text-align: center;
+		text-align: left;
 	}
 
 	.name {
@@ -105,8 +128,8 @@
 
 	.ascii-art {
 		flex-direction: column;
-		align-items: center;
-		gap: 1rem;
+		align-items: flex-start;
+		gap: 0.6rem;
 		color: var(--color-accent-bright);
 		filter: drop-shadow(0 0 4px var(--color-accent-bright));
 		cursor: default;
@@ -115,7 +138,7 @@
 	.ascii-art pre {
 		margin: 0;
 		font-family: var(--font-mono);
-		font-size: clamp(8px, 2.3vw, 20px);
+		font-size: clamp(7px, 1.5vw, 14px);
 		font-weight: 400;
 		line-height: 1.2;
 		letter-spacing: 0;
@@ -139,7 +162,7 @@
 	}
 
 	.tagline {
-		margin: 2.25rem 0 0;
+		margin: 1.75rem 0 0;
 		font-size: 1rem;
 		color: var(--color-text);
 	}
@@ -154,9 +177,9 @@
 	.role {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: flex-start;
 		gap: 1.25rem;
-		margin-top: 3rem;
+		margin-top: 1.25rem;
 	}
 
 	.role p {
@@ -166,9 +189,7 @@
 	}
 
 	.resume-button {
-		position: absolute;
-		left: 1.5rem;
-		bottom: 1rem;
+		margin-top: 1.75rem;
 		display: inline-block;
 		padding: 0.05rem 0.65rem 0.1rem;
 		border: 2px solid var(--color-accent-bright);
@@ -226,6 +247,34 @@
 		color: var(--color-accent-muted);
 	}
 
+
+	/* ---------- Portrait ---------- */
+
+	/* A matted print: thin rule, dark mat, and the same
+	   hard offset shadow as the resume button */
+	.portrait {
+		margin: 0;
+		width: clamp(200px, 22vw, 300px);
+		padding: 8px;
+		border: 1px solid var(--color-accent-muted);
+		background: var(--color-bg-secondary);
+		box-shadow: 4px 4px 0 color-mix(in srgb, var(--color-accent-muted) 55%, transparent);
+	}
+
+	.portrait-frame {
+		aspect-ratio: 4 / 5;
+		overflow: hidden;
+		outline: 1px solid color-mix(in srgb, var(--color-accent-muted) 70%, transparent);
+	}
+
+	.portrait-frame img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		image-rendering: auto;
+	}
+
 	@keyframes blink {
 		50% {
 			opacity: 0;
@@ -260,7 +309,28 @@
 
 	@media (max-width: 768px) {
 		.home-screen {
-			padding: 1.5rem 1rem 5.5rem;
+			padding: 2.25rem 2rem 4.5rem;
+		}
+
+		.home-main {
+			grid-template-columns: 1fr;
+			justify-items: center;
+			gap: 2rem;
+		}
+
+		.home-content,
+		.role {
+			align-items: center;
+			text-align: center;
+		}
+
+		.ascii-art {
+			align-items: center;
+		}
+
+		.portrait {
+			width: min(64vw, 240px);
+			padding: 6px;
 		}
 
 		.desktop-only {
@@ -272,21 +342,16 @@
 		}
 
 		.ascii-art pre {
-			font-size: clamp(7px, 2.9vw, 12px);
+			font-size: clamp(7px, 3.5vw, 14px);
 		}
 
 		.tagline {
 			font-size: 0.85rem;
+			text-wrap: balance;
 		}
 
 		.role {
-			margin-top: 2.25rem;
-		}
-
-		/* Sit above the wrapped status bar instead of beside it */
-		.resume-button {
-			left: 1rem;
-			bottom: 3rem;
+			margin-top: 1rem;
 		}
 
 		.status-bar {

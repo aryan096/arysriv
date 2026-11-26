@@ -8,7 +8,7 @@ tags:
   - Creative Coding
 published: true
 liveUrl: https://emergentia.arysriv.com/
-order: 6
+order: 7
 ---
 
 ## Overview

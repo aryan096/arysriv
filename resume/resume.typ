@@ -19,7 +19,7 @@
 // ---- Page + text defaults ---------------------------------------------------
 
 #set document(title: data.name.first + " " + data.name.last + " — Resume", author: data.name.first + " " + data.name.last)
-#set page(paper: "us-letter", margin: (x: 0.6in, top: 0.5in, bottom: 0.5in))
+#set page(paper: "us-letter", margin: (x: 0.6in, top: 0.4in, bottom: 0.4in))
 #set text(font: "Open Sans", size: body-size, fill: ink, lang: "en")
 #set par(leading: 0.8em, spacing: 0.8em)
 #set list(marker: text(fill: accent, sym.bullet), indent: 0.1em, body-indent: 0.55em, spacing: 0.7em)

@@ -4,14 +4,14 @@
 @theme static {
   --font-mono: "JetBrains Mono", monospace;
   --font-display: "VT323", "JetBrains Mono", monospace;
-  --color-bg: #0a0a0e;
-  --color-bg-secondary: #0f0f14;
-  --color-text: #b8a0d9;
-  --color-text-muted: #8870a8;
-  --color-accent: #b8a0d9;
-  --color-accent-bright: #d4b8ff;
-  --color-accent-muted: #6850a0;
-  --color-border: #9e86c2;
+  --color-bg: #0b0b0a;
+  --color-bg-secondary: #11110f;
+  --color-text: #ebe4d2;
+  --color-text-muted: #9b9483;
+  --color-accent: #ebe4d2;
+  --color-accent-bright: #f5efe0;
+  --color-accent-muted: #5f5a4e;
+  --color-border: #bdb5a3;
   --color-amber: #ffaa00;
   --color-purple: #c678dd;
   --color-blue: #00d4ff;

@@ -74,7 +74,7 @@
 		const ctx = canvas.getContext('2d');
 		if (!ctx) return;
 
-		const ink = getComputedStyle(court).getPropertyValue('--ink').trim() || '#d4b8ff';
+		const ink = getComputedStyle(court).getPropertyValue('--ink').trim() || '#f5efe0';
 
 		let W = 0;
 		let H = 0;
