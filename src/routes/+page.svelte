@@ -13,11 +13,49 @@
 
 	let bangaloreTime = $state('--:--');
 
+	const greeting = 'hello there!';
+	const greetingSeenKey = 'home-greeting-typed';
+	let typed = $state('');
+	let typing = $state(false);
+
 	onMount(() => {
 		const tick = () => (bangaloreTime = clockFormat.format(new Date()));
 		tick();
 		const interval = setInterval(tick, 10_000);
 		return () => clearInterval(interval);
+	});
+
+	// Type the greeting once per visit; afterwards (or with reduced motion) show it instantly.
+	onMount(() => {
+		let seen = false;
+		try {
+			seen = sessionStorage.getItem(greetingSeenKey) === '1';
+		} catch {
+			// storage unavailable: just type it
+		}
+		const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		if (seen || reduceMotion) {
+			typed = greeting;
+			return;
+		}
+
+		let timer: ReturnType<typeof setTimeout>;
+		const typeNext = () => {
+			typed = greeting.slice(0, typed.length + 1);
+			if (typed.length < greeting.length) {
+				timer = setTimeout(typeNext, 70 + Math.random() * 70);
+			} else {
+				typing = false;
+				try {
+					sessionStorage.setItem(greetingSeenKey, '1');
+				} catch {
+					// ignore
+				}
+			}
+		};
+		typing = true;
+		timer = setTimeout(typeNext, 700);
+		return () => clearTimeout(timer);
 	});
 </script>
 
@@ -51,7 +89,7 @@
 ▄█ █▀▄ █ ▀▄▀ █▀█ ▄█  █  █▀█ ▀▄▀ █▀█</pre></span>
 		</h1>
 
-		<p class="tagline">&gt; making things that are fun and/or useful<span class="cursor" aria-hidden="true">█</span></p>
+		<p class="tagline">&gt; making things that are fun and/or useful</p>
 
 		<p class="tagline role">
 			&gt; data scientist @
@@ -61,6 +99,15 @@
 		</p>
 
 		<p class="tagline role">&gt; favorite chess opening: the French Defense</p>
+
+		<p class="tagline role greeting">
+			<span class="sr-only">{greeting}</span>
+			<span aria-hidden="true">&gt; {typed}</span><span
+				class="cursor"
+				class:typing
+				aria-hidden="true">█</span
+			>
+		</p>
 
 		<a
 			class="resume-button"
@@ -177,6 +224,11 @@
 		color: var(--color-accent-bright);
 		text-shadow: 0 0 10px var(--color-accent-bright);
 		animation: blink 1s steps(1) infinite;
+	}
+
+	/* Hold the cursor solid while characters are landing, like a real terminal */
+	.cursor.typing {
+		animation: none;
 	}
 
 	.tagline.role {
