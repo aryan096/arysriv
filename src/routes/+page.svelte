@@ -16,7 +16,6 @@
 	const greeting = 'hello there!';
 	const greetingSeenKey = 'home-greeting-typed';
 	let typed = $state('');
-	let typing = $state(false);
 
 	onMount(() => {
 		const tick = () => (bangaloreTime = clockFormat.format(new Date()));
@@ -45,7 +44,6 @@
 			if (typed.length < greeting.length) {
 				timer = setTimeout(typeNext, 70 + Math.random() * 70);
 			} else {
-				typing = false;
 				try {
 					sessionStorage.setItem(greetingSeenKey, '1');
 				} catch {
@@ -53,7 +51,6 @@
 				}
 			}
 		};
-		typing = true;
 		timer = setTimeout(typeNext, 700);
 		return () => clearTimeout(timer);
 	});
@@ -89,9 +86,7 @@
 ▄█ █▀▄ █ ▀▄▀ █▀█ ▄█  █  █▀█ ▀▄▀ █▀█</pre></span>
 		</h1>
 
-		<p class="tagline">&gt; making things that are fun and/or useful</p>
-
-		<p class="tagline role">
+		<p class="tagline role lead">
 			&gt; data scientist @
 			<a href="https://devdatalab.org" target="_blank" rel="noopener noreferrer"
 				>Development Data Lab</a
@@ -102,11 +97,7 @@
 
 		<p class="tagline role greeting">
 			<span class="sr-only">{greeting}</span>
-			<span aria-hidden="true">&gt; {typed}</span><span
-				class="cursor"
-				class:typing
-				aria-hidden="true">█</span
-			>
+			<span aria-hidden="true">&gt; {typed}</span>
 		</p>
 
 		<a
@@ -219,20 +210,13 @@
 		color: var(--color-text);
 	}
 
-	.cursor {
-		margin-left: 0.35em;
-		color: var(--color-accent-bright);
-		text-shadow: 0 0 10px var(--color-accent-bright);
-		animation: blink 1s steps(1) infinite;
-	}
-
-	/* Hold the cursor solid while characters are landing, like a real terminal */
-	.cursor.typing {
-		animation: none;
-	}
-
 	.tagline.role {
 		margin-top: 0.75rem;
+	}
+
+	/* First line under the name keeps the larger gap */
+	.tagline.role.lead {
+		margin-top: 2rem;
 	}
 
 	.resume-button {
@@ -322,12 +306,6 @@
 		image-rendering: auto;
 	}
 
-	@keyframes blink {
-		50% {
-			opacity: 0;
-		}
-	}
-
 	@keyframes jitter {
 		0% {
 			transform: translateX(-2px);
@@ -341,7 +319,6 @@
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.cursor,
 		.name:hover pre {
 			animation: none;
 		}
